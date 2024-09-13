@@ -1,0 +1,105 @@
+﻿@model IEnumerable<Ecommerce.BD.Models.ProductoImagene>
+
+@{
+    ViewData["Title"] = "Imágenes de Producto";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid mt-4">
+    <h2 class="text-center mb-4">Imágenes para el producto: @ViewBag.Producto?.ProNombre</h2>
+
+    <div class="row mb-4">
+        <div class="col-md-12 text-end">
+            <a href="@Url.Action("Crear", "ProductoImagenes", new { productoId = ViewBag.Producto?.ProductoId })" class="btn btn-success">
+                <i class="bi bi-plus-lg"></i> Agregar Imagen
+            </a>
+        </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+        @foreach (var imagen in Model)
+        {
+            <div class="col">
+                <div class="card h-100">
+                    <!-- Cambiado el object-fit a 'contain' para que la imagen se ajuste sin recorte -->
+                    <img src="@imagen.ImagenUrl" class="card-img-top" alt="Imagen del producto" style="height: 200px; object-fit: contain;">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            @if (imagen.EsPrincipal == true)
+                            {
+                                <span class="badge bg-success me-2">Principal</span>
+                            }
+                            Imagen @imagen.ImagenId
+                        </h5>
+                        <p class="card-text">
+                            <a href="@imagen.ImagenUrl" target="_blank" class="text-truncate d-inline-block" style="max-width: 100%;">@imagen.ImagenUrl</a>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-between">
+                            <a href="@Url.Action("Editar", "ProductoImagenes", new { id = imagen.ImagenId })" class="btn btn-sm btn-outline-primary">
+                                <i class="bi bi-pencil"></i> Editar
+                            </a>
+                            <button class="btn btn-sm btn-outline-danger" onclick="confirmarEliminar(@imagen.ImagenId)">
+                                <i class="bi bi-trash"></i> Eliminar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function confirmarEliminar(imagenId) {
+            Swal.fire({
+                title: '¿Eliminar esta imagen?',
+                text: "Esta acción no se puede deshacer",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    eliminarImagen(imagenId);
+                }
+            });
+        }
+
+        function eliminarImagen(imagenId) {
+            $.ajax({
+                url: '@Url.Action("EliminarConfirmado", "ProductoImagenes")',
+                type: 'POST',
+                data: { id: imagenId },
+                success: function (result) {
+                    if (result.success) {
+                        Swal.fire({
+                            title: '¡Eliminado!',
+                            text: 'La imagen ha sido eliminada con éxito.',
+                            icon: 'success'
+                        }).then(() => {
+                            location.reload();
+                        });
+                    } else {
+                        Swal.fire({
+                            title: 'Error',
+                            text: result.message,
+                            icon: 'error'
+                        });
+                    }
+                },
+                error: function (xhr, status, error) {
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'Hubo un problema al eliminar la imagen.',
+                        icon: 'error'
+                    });
+                }
+            });
+        }
+    </script>
+}

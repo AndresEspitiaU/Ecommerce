@@ -1,0 +1,112 @@
+﻿@model IEnumerable<Ecommerce.BD.Models.PromocionProducto>
+@{
+    ViewData["Title"] = "Productos en Promoción";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid py-4">
+    <div class="row mb-4 align-items-center">
+        <div class="col">
+            <h2 class="h3 mb-0">Productos en la promoción: @ViewBag.Promocion?.PromNombre</h2>
+        </div>
+        <div class="col-auto">
+            <a href="@Url.Action("Crear", "PromocionProducto", new { promocionId = ViewBag.Promocion?.PromocionId })" class="btn btn-success d-flex align-items-center">
+                <i class="lni lni-plus me-2"></i> Agregar Producto
+            </a>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            @if (Model.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead>
+                            <tr>
+                                <th scope="col">Producto</th>
+                                <th scope="col" class="text-end">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Producto?.ProNombre</td>
+                                    <td class="text-end">
+                                        <div class="btn-group" role="group" aria-label="Acciones de producto">
+                                            <a href="@Url.Action("Editar", "PromocionProducto", new { id = item.PromocionProductoId })" class="btn btn-outline-primary btn-sm" data-bs-toggle="tooltip" title="Editar">
+                                                <i class="lni lni-pencil"></i>
+                                            </a>
+                                            <button class="btn btn-outline-danger btn-sm" data-bs-toggle="tooltip" title="Eliminar" onclick="confirmarEliminar(@item.PromocionProductoId)">
+                                                <i class="lni lni-close"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-info" role="alert">
+                    <i class="lni lni-information me-2"></i> No hay productos en la promoción actual.
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            });
+        });
+
+        function confirmarEliminar(promocionProductoId) {
+            Swal.fire({
+                title: '¿Eliminar este producto de la promoción?',
+                text: "Esta acción no se puede deshacer",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#dc3545',
+                cancelButtonColor: '#6c757d',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    eliminarProductoPromocion(promocionProductoId);
+                }
+            });
+        }
+
+        function eliminarProductoPromocion(promocionProductoId) {
+            fetch('@Url.Action("EliminarConfirmado", "PromocionProducto")', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'id=' + promocionProductoId
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        Swal.fire('¡Eliminado!', 'El producto ha sido eliminado de la promoción.', 'success').then(() => {
+                            location.reload();
+                        });
+                    } else {
+                        Swal.fire('Error', data.message, 'error');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    Swal.fire('Error', 'Hubo un problema al eliminar el producto.', 'error');
+                });
+        }
+    </script>
+}

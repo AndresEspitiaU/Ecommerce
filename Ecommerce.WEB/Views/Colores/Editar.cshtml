@@ -1,0 +1,84 @@
+﻿@model Ecommerce.BD.Models.Colore
+
+@{
+    ViewData["Title"] = "Editar Color";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid mt-4">
+    <h2 class="text-center mb-4">Editar Color</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-body">
+                    <form asp-action="Editar" method="post">
+                        <input type="hidden" asp-for="ColorId" />
+
+                        <div class="form-group mb-3">
+                            <label for="Col_Nombre" class="form-label">Nombre del Color</label>
+                            <input type="text" class="form-control" id="Col_Nombre" name="Col_Nombre" value="@Model.Col_Nombre" required />
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="Col_Hexadecimal" class="form-label">Código Hexadecimal</label>
+                            <input type="text" class="form-control" id="Col_Hexadecimal" name="Col_Hexadecimal" value="@Model.Col_Hexadecimal" required />
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label class="form-label">Seleccionar Color</label>
+                            <input type="color" id="colorPicker" class="form-control form-control-color w-100" value="@Model.Col_Hexadecimal">
+                        </div>
+
+                        <div class="color-preview-container mb-3">
+                            <div id="colorPreview" class="rounded" style="height: 150px; width: 100%; background-color:@Model.Col_Hexadecimal;"></div>
+                            <div id="colorName" class="text-center mt-2 font-weight-bold"></div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            function updateColorPreview(color) {
+                $('#colorPreview').css('background-color', color);
+                $('#Col_Hexadecimal').val(color);
+                $('#colorPicker').val(color);
+
+                // Generar nombre del color
+                var colorName = chroma(color).name();
+                $('#colorName').text(colorName);
+
+                // Cambiar color del texto basado en la luminosidad
+                var isDark = chroma(color).luminance() < 0.5;
+                $('#colorName').css('color', isDark ? 'white' : 'black');
+            }
+
+            // Actualizar cuando se selecciona un color
+            $('#colorPicker').on('input', function () {
+                updateColorPreview($(this).val());
+            });
+
+            // Actualizar cuando se introduce un valor manualmente en el input de hexadecimal
+            $('#Col_Hexadecimal').on('input', function () {
+                var hex = $(this).val();
+                if (/^#?([0-9A-F]{6})$/i.test(hex)) {
+                    if (hex[0] !== '#') hex = '#' + hex; // Añadir # si no está presente
+                    updateColorPreview(hex);
+                }
+            });
+
+            // Actualización inicial
+            updateColorPreview('@Model.Col_Hexadecimal');
+        });
+    </script>
+}

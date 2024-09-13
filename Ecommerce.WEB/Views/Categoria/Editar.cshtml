@@ -1,0 +1,63 @@
+﻿@model Ecommerce.BD.Models.Categoria
+
+@{
+    ViewData["Title"] = "Editar Categoría";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid py-4">
+    <h2 class="text-center mb-4">Editar Categoría</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form asp-action="Editar" method="post" id="categoriaForm">
+                <input type="hidden" asp-for="CategoriaId" />
+
+                <div class="mb-3">
+                    <label asp-for="CatNombre" class="form-label">Nombre de la Categoría</label>
+                    <input asp-for="CatNombre" class="form-control" required />
+                    <span asp-validation-for="CatNombre" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="CatImagenUrl" class="form-label">URL de Imagen</label>
+                    <input asp-for="CatImagenUrl" class="form-control" />
+                    <span asp-validation-for="CatImagenUrl" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-success">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).ready(function () {
+            $('#categoriaForm').submit(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: '@Url.Action("Editar", "Categoria")',
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function (data) {
+                        if (data.success) {
+                            Swal.fire('Éxito', data.message, 'success').then(() => {
+                                window.location.href = '@Url.Action("Index", "Categoria")';
+                            });
+                        } else {
+                            Swal.fire('Error', data.message, 'error');
+                        }
+                    },
+                    error: function () {
+                        Swal.fire('Error', 'Hubo un problema al actualizar la categoría', 'error');
+                    }
+                });
+            });
+        });
+    </script>
+}

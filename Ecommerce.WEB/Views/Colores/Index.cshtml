@@ -1,0 +1,128 @@
+﻿@model IEnumerable<Ecommerce.BD.Models.Colore>
+@{
+    ViewData["Title"] = "Paleta de Colores";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid mt-4">
+    <h2 class="text-center mb-4">Paleta de Colores</h2>
+
+    <div class="row mb-4">
+        <div class="col-md-6 offset-md-3">
+            <div class="input-group">
+                <input type="text" id="colorSearch" class="form-control" placeholder="Buscar colores...">
+                <div class="input-group-append">
+                    <a asp-action="Crear" class="btn btn-primary">
+                        <i class="fas fa-plus-circle"></i> Nuevo Color
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="colorGrid">
+        @foreach (var color in Model)
+        {
+            <div class="col-md-3 col-sm-6 mb-4 color-item">
+                <div class="card">
+                    <div class="card-body text-center" style="background-color: @color.Col_Hexadecimal; height: 150px;">
+                        <h5 class="card-title mt-2" style="color: @(IsColorDark(color.Col_Hexadecimal) ? "#ffffff" : "#000000");">
+                            @color.Col_Nombre
+                        </h5>
+                        <p class="card-text" style="color: @(IsColorDark(color.Col_Hexadecimal) ? "#ffffff" : "#000000");">
+                            @color.Col_Hexadecimal
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="btn-group d-flex" role="group">
+                            <a asp-action="Editar" asp-route-id="@color.ColorId" class="btn btn-sm btn-outline-primary w-100">
+                                <i class="fas fa-edit"></i> Editar
+                            </a>
+                            <button class="btn btn-sm btn-outline-danger w-100" onclick="confirmarEliminar(@color.ColorId)">
+                                <i class="fas fa-trash-alt"></i> Eliminar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).ready(function () {
+            $('#colorSearch').on('keyup', function () {
+                var value = $(this).val().toLowerCase();
+                $(".color-item").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+
+        function confirmarEliminar(colorId) {
+            Swal.fire({
+                title: '¿Eliminar este color?',
+                text: "Esta acción no se puede deshacer",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    eliminarColor(colorId);
+                }
+            });
+        }
+
+        function eliminarColor(colorId) {
+            $.ajax({
+                url: '@Url.Action("EliminarConfirmado", "Colores")',
+                type: 'POST',
+                data: { id: colorId },
+                success: function (result) {
+                    Swal.fire({
+                        title: '¡Eliminado!',
+                        text: 'El color ha sido eliminado con éxito.',
+                        icon: 'success'
+                    }).then(() => {
+                        location.reload();
+                    });
+                },
+                error: function (xhr, status, error) {
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'Hubo un problema al eliminar el color.',
+                        icon: 'error'
+                    });
+                }
+            });
+        }
+    </script>
+}
+
+@functions {
+    bool IsColorDark(string hexColor)
+    {
+        if (hexColor.StartsWith("#"))
+        {
+            hexColor = hexColor.Substring(1);
+        }
+
+        if (hexColor.Length == 6)
+        {
+            int r = Convert.ToInt32(hexColor.Substring(0, 2), 16);
+            int g = Convert.ToInt32(hexColor.Substring(2, 2), 16);
+            int b = Convert.ToInt32(hexColor.Substring(4, 2), 16);
+
+            double luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+            return luminance < 0.5;
+        }
+
+        return false;
+    }
+}

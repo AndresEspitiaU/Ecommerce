@@ -1,0 +1,64 @@
+﻿@model List<Ecommerce.BD.Models.Marca>
+@{
+    ViewData["Title"] = "Gestión de Marcas";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3">Gestión de Marcas</h1>
+        <a asp-action="Crear" class="btn btn-outline-primary">
+            <i class="bi bi-plus-circle"></i> Nueva Marca
+        </a>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+        @foreach (var marca in Model)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">@marca.MarNombre</h5>
+                        <p class="card-text">Productos: @marca.ProductosCount</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-sm btn-outline-secondary" onclick="editarMarca(@marca.MarcaId)">
+                                <i class="bi bi-pencil"></i> Editar
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger" onclick="confirmarEliminacion(@marca.MarcaId)">
+                                <i class="bi bi-trash"></i> Eliminar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function editarMarca(id) {
+            window.location.href = '@Url.Action("Editar", "Marcas")/' + id;
+        }
+
+        function confirmarEliminacion(id) {
+            Swal.fire({
+                title: '¿Eliminar Marca?',
+                text: "Esta acción no se puede deshacer.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#dc3545',
+                cancelButtonColor: '#6c757d',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '@Url.Action("Eliminar", "Marcas")/' + id;
+                }
+            });
+        }
+    </script>
+}

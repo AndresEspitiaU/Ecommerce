@@ -1,0 +1,62 @@
+﻿@model Ecommerce.BD.Models.ProductoDescuento
+
+@{
+    ViewData["Title"] = "Editar Descuento de Producto";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid py-4">
+    <h2 class="text-center mb-4">Editar Descuento de Producto</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form asp-action="Editar" method="post">
+                <input type="hidden" asp-for="ProductoDescuentoId" />
+
+                <!-- Selección de Producto -->
+                <div class="mb-3">
+                    <label asp-for="ProductoId" class="form-label">Producto</label>
+                    <select asp-for="ProductoId" asp-items="@(new SelectList(ViewBag.Productos, "ProductoId", "ProNombre"))" class="form-control">
+                        <option value="">Selecciona un producto</option>
+                    </select>
+                    <span asp-validation-for="ProductoId" class="text-danger"></span>
+                </div>
+
+                <!-- Selección de Descuento -->
+                <div class="mb-3">
+                    <label asp-for="DescuentoId" class="form-label">Descuento</label>
+                    <select asp-for="DescuentoId" asp-items="@(new SelectList(ViewBag.Descuentos, "DescuentoId", "DesNombre"))" class="form-control">
+                        <option value="">Selecciona un descuento</option>
+                    </select>
+                    <span asp-validation-for="DescuentoId" class="text-danger"></span>
+                </div>
+
+                <!-- Selección de Fecha Inicio -->
+                <div class="mb-3">
+                    <label asp-for="FechaInicio" class="form-label">Fecha de Inicio</label>
+                    <input asp-for="FechaInicio" class="form-control" type="date" value="@Model.FechaInicio.ToString("yyyy-MM-dd")" required />
+                    <span asp-validation-for="FechaInicio" class="text-danger"></span>
+                </div>
+
+                <!-- Selección de Fecha Fin -->
+                <div class="mb-3">
+                    <label asp-for="FechaFin" class="form-label">Fecha de Fin</label>
+                    <input asp-for="FechaFin" class="form-control" type="date" value="@Model.FechaFin.ToString("yyyy-MM-dd")" required />
+                    <span asp-validation-for="FechaFin" class="text-danger"></span>
+                </div>
+
+                <!-- Botón de Guardar Cambios -->
+                <button type="submit" class="btn btn-success">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            // Iniciar selectpicker con búsqueda si lo necesitas
+            $('.selectpicker').selectpicker();
+        });
+    </script>
+}

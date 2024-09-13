@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Ecommerce.BD.Models.Subcategoria>
+
+@{
+    ViewData["Title"] = "Lista de Subcategorías";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid mt-4">
+    <h2 class="text-center mb-4">Lista de Subcategorías</h2>
+
+    <div class="row mb-4">
+        <div class="col-md-6 offset-md-3">
+            <div class="input-group">
+                <input type="text" id="subcategoriaSearch" class="form-control" placeholder="Buscar subcategorías...">
+                <div class="input-group-append">
+                    <a asp-action="Crear" class="btn btn-primary">
+                        <i class="fas fa-plus-circle"></i> Nueva Subcategoría
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="subcategoriaGrid">
+        @foreach (var subcategoria in Model)
+        {
+            <div class="col-md-3 col-sm-6 mb-4 subcategoria-item">
+                <div class="card shadow-sm">
+                    <img class="card-img-top" src="@subcategoria.SubImagenUrl" alt="@subcategoria.SubNombre" style="height: 150px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">@subcategoria.SubNombre</h5>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <a asp-action="Editar" asp-route-id="@subcategoria.SubcategoriaId" class="btn btn-sm btn-outline-primary">
+                            <i class="fas fa-edit"></i> Editar
+                        </a>
+                        <button class="btn btn-sm btn-outline-danger" onclick="eliminarSubcategoria(@subcategoria.SubcategoriaId)">
+                            <i class="fas fa-trash-alt"></i> Eliminar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function eliminarSubcategoria(id) {
+            Swal.fire({
+                title: '¿Eliminar esta subcategoría?',
+                text: "No podrás revertir esto",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '@Url.Action("Eliminar", "Subcategoria")/' + id;
+                }
+            });
+        }
+    </script>
+}

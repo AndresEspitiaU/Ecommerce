@@ -1,0 +1,93 @@
+﻿@model Ecommerce.BD.Models.ProductoImagene
+
+@{
+    ViewData["Title"] = "Editar Imagen del Producto";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid py-4">
+    <h2 class="text-center mb-4">Editar Imagen del Producto: @ViewBag.Producto.ProNombre</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form id="editarImagenForm" method="post">
+                <input type="hidden" asp-for="ImagenId" />
+                <input type="hidden" asp-for="ProductoId" />
+
+                <div class="mb-3">
+                    <label asp-for="ImagenUrl" class="form-label">URL de la Imagen</label>
+                    <input asp-for="ImagenUrl" class="form-control" />
+                    <span asp-validation-for="ImagenUrl" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3 form-check">
+                    <input asp-for="EsPrincipal" class="form-check-input" type="checkbox" />
+                    <label asp-for="EsPrincipal" class="form-check-label">¿Es la imagen principal?</label>
+                    <span asp-validation-for="EsPrincipal" class="text-danger"></span>
+                </div>
+
+                <button type="button" class="btn btn-success" id="guardarCambiosBtn">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.getElementById('guardarCambiosBtn').addEventListener('click', function () {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "Estás a punto de actualizar esta imagen",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#28a745',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, actualizar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Si el usuario confirma, envía el formulario
+                    enviarFormulario();
+                }
+            });
+        });
+
+        function enviarFormulario() {
+            var form = document.getElementById('editarImagenForm');
+            var formData = new FormData(form);
+
+            $.ajax({
+                url: '@Url.Action("Editar", "ProductoImagenes")', // URL del método POST en el controlador
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response.success) {
+                        Swal.fire({
+                            title: '¡Actualizado!',
+                            text: response.message,
+                            icon: 'success'
+                        }).then(() => {
+                            window.location.href = '@Url.Action("Index", "ProductoImagenes", new { productoId = Model.ProductoId })';
+                        });
+                    } else {
+                        Swal.fire({
+                            title: 'Error',
+                            text: response.message,
+                            icon: 'error'
+                        });
+                    }
+                },
+                error: function () {
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'Hubo un problema al actualizar la imagen.',
+                        icon: 'error'
+                    });
+                }
+            });
+        }
+    </script>
+}

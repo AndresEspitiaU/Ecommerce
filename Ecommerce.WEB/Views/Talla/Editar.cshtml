@@ -1,0 +1,196 @@
+﻿@model Ecommerce.BD.Models.Talla
+
+@{
+    ViewData["Title"] = "Editar Talla";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid py-4">
+    <h2 class="text-center mb-4">Editar Talla</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form asp-action="Editar" method="post" id="tallaWizard">
+                <input type="hidden" asp-for="TallaId" /> <!-- Campo oculto para el ID de la talla -->
+                <!-- Wizard Steps -->
+                <div class="mb-4">
+                    <ul class="nav nav-pills nav-justified" id="wizardSteps">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-step="1" href="#">Paso 1: Información Básica</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-step="2" href="#">Paso 2: Medidas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-step="3" href="#">Paso 3: Equivalencias</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Wizard Content -->
+                <div class="wizard-content">
+                    <!-- Step 1: Información Básica -->
+                    <div class="wizard-step" data-step="1">
+                        <div class="mb-3">
+                            <label asp-for="TalNombre" class="form-label">Nombre de la Talla</label>
+                            <input asp-for="TalNombre" class="form-control" required />
+                            <span asp-validation-for="TalNombre" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="TalCategoria" class="form-label">Categoría</label>
+                            <input asp-for="TalCategoria" class="form-control" required />
+                            <span asp-validation-for="TalCategoria" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="TalOrdenVisualizacion" class="form-label">Orden de Visualización</label>
+                            <input asp-for="TalOrdenVisualizacion" class="form-control" type="number" required />
+                            <span asp-validation-for="TalOrdenVisualizacion" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="TalDescripcion" class="form-label">Descripción</label>
+                            <textarea asp-for="TalDescripcion" class="form-control" rows="3"></textarea>
+                            <span asp-validation-for="TalDescripcion" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Medidas -->
+                    <div class="wizard-step" data-step="2" style="display: none;">
+                        <div class="mb-3">
+                            <label asp-for="TalCintura" class="form-label">Cintura (cm)</label>
+                            <input asp-for="TalCintura" class="form-control" type="number" />
+                            <span asp-validation-for="TalCintura" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="TalCadera" class="form-label">Cadera (cm)</label>
+                            <input asp-for="TalCadera" class="form-control" type="number" />
+                            <span asp-validation-for="TalCadera" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="TalPecho" class="form-label">Pecho (cm)</label>
+                            <input asp-for="TalPecho" class="form-control" type="number" />
+                            <span asp-validation-for="TalPecho" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="TalCuello" class="form-label">Cuello (cm)</label>
+                            <input asp-for="TalCuello" class="form-control" type="number" />
+                            <span asp-validation-for="TalCuello" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="TalLargo" class="form-label">Largo (cm)</label>
+                            <input asp-for="TalLargo" class="form-control" type="number" />
+                            <span asp-validation-for="TalLargo" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="TalLongitudManga" class="form-label">Longitud de la Manga (cm)</label>
+                            <input asp-for="TalLongitudManga" class="form-control" type="number" />
+                            <span asp-validation-for="TalLongitudManga" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Equivalencias Internacionales -->
+                    <div class="wizard-step" data-step="3" style="display: none;">
+                        <div class="mb-3">
+                            <label asp-for="TalColombia" class="form-label">Talla Colombia</label>
+                            <input asp-for="TalColombia" class="form-control" type="number" />
+                            <span asp-validation-for="TalColombia" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="TalUS" class="form-label">Talla US</label>
+                            <input asp-for="TalUS" class="form-control" type="number" />
+                            <span asp-validation-for="TalUS" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="TalEU" class="form-label">Talla EU</label>
+                            <input asp-for="TalEU" class="form-control" type="number" />
+                            <span asp-validation-for="TalEU" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navegación entre los pasos -->
+                <div class="d-flex justify-content-between mt-4">
+                    <button type="button" class="btn btn-secondary" id="prevStep" style="display: none;">Anterior</button>
+                    <button type="button" class="btn btn-primary" id="nextStep">Siguiente</button>
+                    <button type="submit" class="btn btn-success" id="submitTalla" style="display: none;">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).ready(function () {
+            let currentStep = 1;
+            const totalSteps = 3;
+
+            function updateStepVisibility() {
+                $('.wizard-step').hide();
+                $(`[data-step="${currentStep}"]`).show();
+
+                $('#prevStep').toggle(currentStep > 1);
+                $('#nextStep').toggle(currentStep < totalSteps);
+                $('#submitTalla').toggle(currentStep === totalSteps);
+
+                $('#wizardSteps .nav-link').removeClass('active');
+                $(`#wizardSteps [data-step="${currentStep}"]`).addClass('active');
+            }
+
+            $('#nextStep').click(function () {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    updateStepVisibility();
+                }
+            });
+
+            $('#prevStep').click(function () {
+                if (currentStep > 1) {
+                    currentStep--;
+                    updateStepVisibility();
+                }
+            });
+
+            $('#tallaWizard').submit(function (e) {
+                e.preventDefault();
+
+                // Enviar el formulario via AJAX
+                $.ajax({
+                    url: '@Url.Action("Editar", "Talla")',
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function (data) {
+                        if (data.success) {
+                            Swal.fire({
+                                title: '¡Éxito!',
+                                text: 'Talla editada con éxito',
+                                icon: 'success'
+                            }).then(() => {
+                                // Redirigir al index
+                                window.location.href = '@Url.Action("Index", "Talla")';
+                            });
+                        } else {
+                            Swal.fire('Error', data.message, 'error');
+                        }
+                    },
+                    error: function () {
+                        Swal.fire('Error', 'Hubo un problema al editar la talla', 'error');
+                    }
+                });
+            });
+
+            updateStepVisibility();
+        });
+    </script>
+}

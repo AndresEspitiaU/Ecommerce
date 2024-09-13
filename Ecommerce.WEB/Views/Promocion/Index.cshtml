@@ -1,0 +1,113 @@
+﻿@model IEnumerable<Ecommerce.BD.Models.Promocione>
+@{
+    ViewData["Title"] = "Promociones Activas";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h2">Promociones Activas</h1>
+        <a asp-action="Crear" asp-controller="Promocion" class="btn btn-primary">
+            <i class="bi bi-plus-circle me-2"></i>Nueva Promoción
+        </a>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach (var promocion in Model)
+        {
+            <div class="col">
+                <div class="card h-100 @(promocion.PromActivo ? "border-success" : "border-secondary")">
+                    <div class="card-header bg-transparent">
+                        <h5 class="card-title mb-0">@promocion.PromNombre</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">@promocion.PromDescripcion</p>
+                        <ul class="list-unstyled">
+                            <li><strong>Inicio:</strong> @promocion.PromFechaInicio.ToString("dd/MM/yyyy")</li>
+                            <li><strong>Fin:</strong> @promocion.PromFechaFin.ToString("dd/MM/yyyy")</li>
+                            @if (promocion.PromDescuentoPorcentaje > 0)
+                            {
+                                <li><strong>Descuento:</strong> <span class="badge bg-info">@promocion.PromDescuentoPorcentaje%</span></li>
+                            }
+                            @if (promocion.PromDescuentoMonto > 0)
+                            {
+                                <li><strong>Descuento:</strong> <span class="badge bg-success">$@promocion.PromDescuentoMonto</span></li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge @(promocion.PromActivo ? "bg-success" : "bg-secondary")">
+                                @(promocion.PromActivo ? "Activo" : "Inactivo")
+                            </span>
+                            <div class="btn-group" role="group">
+                                <a asp-action="Editar" asp-route-id="@promocion.PromocionId" class="btn btn-sm btn-outline-secondary">
+                                    <i class="lni lni-pencil"></i> 
+                                </a>
+                                <button class="btn btn-sm btn-outline-danger" onclick="confirmarEliminar(@promocion.PromocionId)">
+                                    <i class="lni lni-trash-can"></i> 
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function confirmarEliminar(promocionId) {
+            Swal.fire({
+                title: '¿Eliminar esta promoción?',
+                text: "Esta acción no se puede deshacer",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    eliminarPromocion(promocionId);
+                }
+            });
+        }
+
+        function eliminarPromocion(promocionId) {
+            $.ajax({
+                url: '@Url.Action("EliminarConfirmado", "Promocion")',
+                type: 'POST',
+                data: { id: promocionId },
+                success: function (result) {
+                    if (result.success) {
+                        Swal.fire({
+                            title: '¡Eliminado!',
+                            text: 'La promoción ha sido eliminada con éxito.',
+                            icon: 'success'
+                        }).then(() => {
+                            location.reload();
+                        });
+                    } else {
+                        Swal.fire({
+                            title: 'Error',
+                            text: 'Hubo un problema al eliminar la promoción.',
+                            icon: 'error'
+                        });
+                    }
+                },
+                error: function (xhr, status, error) {
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'Hubo un problema al eliminar la promoción.',
+                        icon: 'error'
+                    });
+                }
+            });
+        }
+    </script>
+
+}

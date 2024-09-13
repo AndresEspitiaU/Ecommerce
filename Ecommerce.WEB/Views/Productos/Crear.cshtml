@@ -1,0 +1,204 @@
+﻿@model Ecommerce.BD.Models.Producto
+
+@{
+    ViewData["Title"] = "Crear Nuevo Producto";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid py-4">
+    <h2 class="text-center mb-4">Crear Nuevo Producto</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form asp-action="Crear" method="post" id="productoWizard">
+                <!-- Wizard Steps -->
+                <div class="mb-4">
+                    <ul class="nav nav-pills nav-justified" id="wizardSteps">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-step="1" href="#">Paso 1: Información Básica</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-step="2" href="#">Paso 2: Precios y Stock</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-step="3" href="#">Paso 3: Categoría, Colección y Marca</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Wizard Content -->
+                <div class="wizard-content">
+                    <!-- Step 1: Información Básica -->
+                    <div class="wizard-step" data-step="1">
+                        <div class="mb-3">
+                            <label asp-for="ProCodigo" class="form-label">Código del Producto</label>
+                            <input asp-for="ProCodigo" class="form-control" required />
+                            <span asp-validation-for="ProCodigo" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="ProNombre" class="form-label">Nombre del Producto</label>
+                            <input asp-for="ProNombre" class="form-control" required />
+                            <span asp-validation-for="ProNombre" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="ProDescripcionCorta" class="form-label">Descripción Corta</label>
+                            <input asp-for="ProDescripcionCorta" class="form-control" required />
+                            <span asp-validation-for="ProDescripcionCorta" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="ProDescripción" class="form-label">Descripción</label>
+                            <textarea asp-for="ProDescripción" class="form-control" rows="4" required></textarea>
+                            <span asp-validation-for="ProDescripción" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="ProImagenUrl" class="form-label">URL de Imagen</label>
+                            <input asp-for="ProImagenUrl" class="form-control" />
+                            <span asp-validation-for="ProImagenUrl" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="ProActivo" class="form-label">Producto Activo</label>
+                            <input asp-for="ProActivo" class="form-check-input" type="checkbox" />
+                            <span asp-validation-for="ProActivo" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Precios y Stock -->
+                    <div class="wizard-step" data-step="2" style="display: none;">
+                        <div class="mb-3">
+                            <label asp-for="ProPrecio" class="form-label">Precio</label>
+                            <input asp-for="ProPrecio" class="form-control" type="number" step="0.01" required />
+                            <span asp-validation-for="ProPrecio" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="ProStock" class="form-label">Stock</label>
+                            <input asp-for="ProStock" class="form-control" type="number" required />
+                            <span asp-validation-for="ProStock" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="ProPeso" class="form-label">Peso (Kg)</label>
+                            <input asp-for="ProPeso" class="form-control" type="number" step="0.01" />
+                            <span asp-validation-for="ProPeso" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Categoría, Colección, Marca, y Género -->
+                    <div class="wizard-step" data-step="3" style="display: none;">
+                        <div class="mb-3">
+                            <label asp-for="ProCategoriaId" class="form-label">Categoría</label>
+                            <select asp-for="ProCategoriaId" class="form-control" asp-items="ViewBag.Categorias">
+                                <option value="">Selecciona una categoría</option>
+                            </select>
+                            <span asp-validation-for="ProCategoriaId" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="SubcategoriaId" class="form-label">Subcategoría</label>
+                            <select asp-for="SubcategoriaId" class="form-control" asp-items="ViewBag.Subcategorias">
+                                <option value="">Selecciona una subcategoría</option>
+                            </select>
+                            <span asp-validation-for="SubcategoriaId" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="ProMarcaId" class="form-label">Marca</label>
+                            <select asp-for="ProMarcaId" class="form-control" asp-items="ViewBag.Marcas">
+                                <option value="">Selecciona una marca</option>
+                            </select>
+                            <span asp-validation-for="ProMarcaId" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="ProColeccionId" class="form-label">Colección</label>
+                            <select asp-for="ProColeccionId" class="form-control" asp-items="ViewBag.Colecciones">
+                                <option value="">Selecciona una colección</option>
+                            </select>
+                            <span asp-validation-for="ProColeccionId" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="ProGeneroId" class="form-label">Género</label>
+                            <select asp-for="ProGeneroId" class="form-control" asp-items="ViewBag.Generos">
+                                <option value="">Selecciona un género</option>
+                            </select>
+                            <span asp-validation-for="ProGeneroId" class="text-danger"></span>
+                        </div>
+                </div>
+
+                <!-- Navegación entre los pasos -->
+                <div class="d-flex justify-content-between mt-4">
+                    <button type="button" class="btn btn-secondary" id="prevStep" style="display: none;">Anterior</button>
+                    <button type="button" class="btn btn-primary" id="nextStep">Siguiente</button>
+                    <button type="submit" class="btn btn-success" id="submitProducto" style="display: none;">Crear Producto</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+            let currentStep = 1;
+            const totalSteps = 3;
+
+            function updateStepVisibility() {
+                $('.wizard-step').hide();
+                $(`[data-step="${currentStep}"]`).show();
+
+                $('#prevStep').toggle(currentStep > 1);
+                $('#nextStep').toggle(currentStep < totalSteps);
+                $('#submitProducto').toggle(currentStep === totalSteps);
+
+                $('#wizardSteps .nav-link').removeClass('active');
+                $(`#wizardSteps [data-step="${currentStep}"]`).addClass('active');
+            }
+
+            $('#nextStep').click(function () {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    updateStepVisibility();
+                }
+            });
+
+            $('#prevStep').click(function () {
+                if (currentStep > 1) {
+                    currentStep--;
+                    updateStepVisibility();
+                }
+            });
+
+            $('#productoWizard').submit(function (e) {
+                e.preventDefault();
+
+                $.ajax({
+                    url: '@Url.Action("Crear", "Productos")',
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function (data) {
+                        if (data.success) {
+                            Swal.fire('Éxito', data.message, 'success').then(() => {
+                                window.location.href = '@Url.Action("Index", "Productos")';
+                            });
+                        } else {
+                            Swal.fire('Error', data.message, 'error');
+                        }
+                    },
+                    error: function () {
+                        Swal.fire('Error', 'Hubo un problema al crear el producto', 'error');
+                    }
+                });
+            });
+
+
+            updateStepVisibility();
+        });
+    </script>
+}

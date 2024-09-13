@@ -1,0 +1,88 @@
+﻿@model List<Ecommerce.BD.Models.Descuento>
+
+@{
+    ViewData["Title"] = "Gestión de Descuentos";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">Gestión de Descuentos</h2>
+        <a asp-action="Crear" class="btn btn-primary">
+            <i class="fas fa-plus-circle"></i> Nuevo Descuento
+        </a>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <input type="text" id="buscador" class="form-control" placeholder="Buscar descuentos...">
+        </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach (var descuento in Model)
+        {
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title text-primary fw-bold">@descuento.DesNombre</h5>
+                            <p class="card-text text-muted">@descuento.DesDescripcion</p>
+                            <p class="mb-2">
+                                <strong>Porcentaje de Descuento:</strong>
+                                <span class="badge bg-info">@descuento.DesPorcentaje%</span>
+                            </p>
+                            <p>
+                                <strong>Estado:</strong>
+                                <span class="badge @(descuento.DesActivo ? "bg-success" : "bg-danger")">
+                                    @(descuento.DesActivo ? "Activo" : "Inactivo")
+                                </span>
+                            </p>
+                        </div>
+                        <div class="mt-3">
+                            <div class="btn-group w-100" role="group">
+                                <a asp-action="Editar" asp-route-id="@descuento.DescuentoId" class="btn btn-outline-primary">
+                                    <i class="fas fa-edit"></i> Editar
+                                </a>
+                                <button type="button" class="btn btn-outline-danger" onclick="confirmarEliminacion('@descuento.DescuentoId')">
+                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).ready(function () {
+            $('#buscador').on('keyup', function () {
+                var value = $(this).val().toLowerCase();
+                $(".card").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+
+        function confirmarEliminacion(id) {
+            Swal.fire({
+                title: '¿Eliminar Descuento?',
+                text: "Esta acción es irreversible. ¿Estás seguro?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '@Url.Action("Eliminar", "Descuentos")/' + id;
+                }
+            });
+        }
+    </script>
+}

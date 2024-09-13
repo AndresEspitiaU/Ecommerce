@@ -1,0 +1,119 @@
+﻿@model IEnumerable<Ecommerce.BD.Models.Talla>
+
+@{
+    ViewData["Title"] = "Lista de Tallas";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid mt-4">
+    <h2 class="text-center mb-4">Lista de Tallas</h2>
+
+    <div class="row mb-4">
+        <div class="col-md-6 offset-md-3">
+            <div class="input-group">
+                <input type="text" id="tallaSearch" class="form-control" placeholder="Buscar tallas...">
+                <div class="input-group-append">
+                    <a asp-action="Crear" class="btn btn-primary">
+                        <i class="fas fa-plus-circle"></i> Nueva Talla
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="tallaGrid">
+        @foreach (var talla in Model)
+        {
+            <div class="col-md-3 col-sm-6 mb-4 talla-item">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">@talla.TalNombre</h5>
+                        <p class="card-text">Categoría: @talla.TalCategoria</p>
+                        <p class="card-text">Descripción: @talla.TalDescripcion</p>
+                        <p class="card-text">Orden: @talla.TalOrdenVisualizacion</p>
+
+                        @if (talla.TalCintura.HasValue)
+                        {
+                            <p class="card-text">Cintura: @talla.TalCintura cm</p>
+                        }
+                        @if (talla.TalCadera.HasValue)
+                        {
+                            <p class="card-text">Cadera: @talla.TalCadera cm</p>
+                        }
+                        @if (talla.TalPecho.HasValue)
+                        {
+                            <p class="card-text">Pecho: @talla.TalPecho cm</p>
+                        }
+                        @if (talla.TalCuello.HasValue)
+                        {
+                            <p class="card-text">Cuello: @talla.TalCuello cm</p>
+                        }
+                        @if (talla.TalLargo.HasValue)
+                        {
+                            <p class="card-text">Largo: @talla.TalLargo cm</p>
+                        }
+                        @if (talla.TalLongitudManga.HasValue)
+                        {
+                            <p class="card-text">Longitud de la Manga: @talla.TalLongitudManga cm</p>
+                        }
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <a asp-action="Editar" asp-route-id="@talla.TallaId" class="btn btn-sm btn-outline-primary">
+                            <i class="fas fa-edit"></i> Editar
+                        </a>
+                        <button class="btn btn-sm btn-outline-danger" onclick="eliminarTalla(@talla.TallaId)">
+                            <i class="fas fa-trash-alt"></i> Eliminar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).ready(function () {
+            $('#tallaSearch').on('keyup', function () {
+                var value = $(this).val().toLowerCase();
+                $(".talla-item").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+
+        function eliminarTalla(id) {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "No podrás revertir esto",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: '@Url.Action("Eliminar", "Talla")',
+                        type: 'POST',
+                        data: { id: id },
+                        success: function (data) {
+                            if (data.success) {
+                                Swal.fire('Eliminado', data.message, 'success').then(() => {
+                                    location.reload(); // Recarga la página después de eliminar
+                                });
+                            } else {
+                                Swal.fire('Error', data.message, 'error');
+                            }
+                        },
+                        error: function () {
+                            Swal.fire('Error', 'No se pudo eliminar la talla', 'error');
+                        }
+                    });
+                }
+            });
+        }
+    </script>
+}

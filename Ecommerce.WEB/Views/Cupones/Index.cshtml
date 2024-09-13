@@ -1,0 +1,123 @@
+﻿@model List<Ecommerce.BD.Models.Cupone>
+@{
+    ViewData["Title"] = "Gestión de Cupones";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Gestión de Cupones</h2>
+        <div>
+            <button id="toggleView" class="btn btn-outline-secondary me-2">
+                <i class="fas fa-th-large"></i> Cambiar Vista
+            </button>
+            <a asp-action="Crear" asp-controller="Cupones" class="btn btn-primary">
+                <i class="fas fa-plus-circle"></i> Nuevo Cupón
+            </a>
+        </div>
+    </div>
+
+    <div id="cuponesGrid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach (var cupon in Model)
+        {
+            var diasRestantes = cupon.CupFechaExpiracion.HasValue
+            ? (cupon.CupFechaExpiracion.Value - DateTime.Now).Days
+            : (int?)null;
+
+            <div class="col">
+                <div class="card h-100 @(cupon.CupActivo ? "border-success" : "border-secondary")">
+                    <div class="card-header bg-transparent d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">@cupon.CupCodigo</h5>
+                        <span class="badge @(cupon.CupActivo ? "bg-success" : "bg-secondary")">
+                            @(cupon.CupActivo ? "Activo" : "Inactivo")
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">@cupon.CupDescripcion</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Descuento:</strong>
+                                @if (cupon.CupPorcentajeDescuento > 0)
+                                {
+                                    <span class="badge bg-success">@cupon.CupPorcentajeDescuento%</span>
+                                }
+                                else if (cupon.CupMontoDescuento > 0)
+                                {
+                                    <span class="badge bg-info">$@cupon.CupMontoDescuento</span>
+                                }
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Validez:</strong><br>
+                                <small>
+                                    @if (cupon.CupFechaInicio.HasValue && cupon.CupFechaExpiracion.HasValue)
+                                    {
+                                        @: @cupon.CupFechaInicio.Value.ToShortDateString() - @cupon.CupFechaExpiracion.Value.ToShortDateString()
+                                        @if (diasRestantes.HasValue && diasRestantes.Value > 0)
+                                        {
+                                            <br />
+
+                                            <span class="text-muted">(@diasRestantes días restantes)</span>
+                                        }
+                                        else if (diasRestantes.HasValue && diasRestantes.Value <= 0)
+                                        {
+                                            <br />
+
+                                            <span class="text-danger">(Expirado)</span>
+                                        }
+                                    }
+                                </small>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <div class="btn-group w-100" role="group">
+                            <a asp-action="Editar" asp-route-id="@cupon.CuponId" class="btn btn-outline-warning">
+                                <i class="fas fa-edit"></i> Editar
+                            </a>
+                            <button class="btn btn-outline-danger" onclick="confirmarEliminacion('@Url.Action("Eliminar", "Cupones", new { id = cupon.CuponId })')">
+                                <i class="fas fa-trash-alt"></i> Eliminar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        let isGridView = true;
+
+        $(document).ready(function () {
+            $('#toggleView').click(function () {
+                isGridView = !isGridView;
+                if (isGridView) {
+                    $('#cuponesGrid').removeClass('table-responsive').addClass('row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4');
+                    $(this).html('<i class="fas fa-list"></i> Cambiar Vista');
+                } else {
+                    $('#cuponesGrid').removeClass('row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4').addClass('table-responsive');
+                    $(this).html('<i class="fas fa-th-large"></i> Cambiar Vista');
+                }
+            });
+        });
+
+        function confirmarEliminacion(url) {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "Esta acción no se puede deshacer",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = url;
+                }
+            });
+        }
+    </script>
+}

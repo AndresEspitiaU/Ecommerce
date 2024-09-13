@@ -1,0 +1,57 @@
+﻿@model Ecommerce.BD.Models.Marca
+@{
+    ViewData["Title"] = "Editar Marca";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="h3 mb-4">Editar Marca</h1>
+            <form asp-action="Editar" method="post" id="editarMarcaForm">
+                <input type="hidden" asp-for="MarcaId" />
+                <div class="mb-3">
+                    <label asp-for="MarNombre" class="form-label">Nombre de la Marca</label>
+                    <div class="input-group has-validation">
+                        <span class="input-group-text">
+                            <i class="bi bi-pencil-square"></i>
+                        </span>
+                        <input asp-for="MarNombre" class="form-control" required minlength="2" maxlength="50">
+                        <div class="invalid-feedback" id="nombreFeedback">
+                            Por favor, ingrese un nombre válido para la marca (2-50 caracteres).
+                        </div>
+                    </div>
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary" id="submitBtn" disabled>
+                        <i class="bi bi-check-circle me-2"></i>Guardar Cambios
+                    </button>
+                    <a asp-action="Index" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left me-2"></i>Volver al Listado
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const nombreInput = document.getElementById('MarNombre');
+        const submitBtn = document.getElementById('submitBtn');
+        const nombreFeedback = document.getElementById('nombreFeedback');
+        const initialNombre = nombreInput.value;
+
+        function validateNombre() {
+            const isValid = nombreInput.value.length >= 2 && nombreInput.value.length <= 50;
+            const hasChanged = nombreInput.value !== initialNombre;
+
+            submitBtn.disabled = !isValid || !hasChanged;
+            nombreInput.classList.toggle('is-invalid', !isValid);
+            nombreFeedback.style.display = isValid ? 'none' : 'block';
+        }
+
+        nombreInput.addEventListener('input', validateNombre);
+        validateNombre();  // Initial validation
+    </script>
+}

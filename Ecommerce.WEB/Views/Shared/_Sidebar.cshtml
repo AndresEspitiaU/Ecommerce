@@ -1,0 +1,96 @@
+﻿<aside class="sidebar-nav-wrapper">
+    <div class="navbar-logo">
+        <a href="@Url.Action("Index", "Home")">
+            <img src="~/images/logo/logo.svg" alt="logo" />
+        </a>
+    </div>
+    <nav class="sidebar-nav">
+        <ul>
+            <!-- Dashboard -->
+            <li class="nav-item">
+                <a href="@Url.Action("Index", "Dashboard")">
+                    <span class="icon"><i class="lni lni-dashboard"></i></span>
+                    <span class="text">Dashboard</span>
+                </a>
+            </li>
+
+            <!-- Catálogo -->
+            <li class="nav-item nav-item-has-children">
+                <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_catalogo" aria-controls="ddmenu_catalogo" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon"><i class="lni lni-book"></i></span>
+                    <span class="text">Catálogo</span>
+                </a>
+                <ul id="ddmenu_catalogo" class="collapse dropdown-nav">
+                    <li><a href="@Url.Action("Index", "Categoria")"><i class="lni lni-list"></i> Categorías</a></li>
+                    <li><a href="@Url.Action("Index", "Subcategoria")"><i class="lni lni-list"></i> Subcategorías</a></li>
+                    <li><a href="@Url.Action("Index", "Colecciones")"><i class="lni lni-grid-alt"></i> Colecciones</a></li>
+                    <li><a href="@Url.Action("Index", "Marcas")"><i class="lni lni-briefcase"></i> Marcas</a></li>
+                </ul>
+            </li>
+
+            <!-- Productos -->
+            <li class="nav-item nav-item-has-children">
+                <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_productos" aria-controls="ddmenu_productos" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon"><i class="lni lni-package"></i></span>
+                    <span class="text">Productos</span>
+                </a>
+                <ul id="ddmenu_productos" class="collapse dropdown-nav">
+                    <li><a href="@Url.Action("Index", "Productos")"><i class="lni lni-list"></i> Lista de Productos</a></li>
+                    <li><a href="@Url.Action("Index", "ProductoImagenes")"><i class="lni lni-image"></i> Imágenes de Productos</a></li>
+                    <li><a href="@Url.Action("Index", "ProductoDescuentos")"><i class="lni lni-offer"></i> Descuentos de Productos</a></li>
+                    <li><a href="@Url.Action("SeleccionarPromocion", "PromocionProducto")"><i class="lni lni-gift"></i> Productos en Promoción</a></li>
+                    <li><a href="@Url.Action("Index", "Colores")"><i class="lni lni-paint-roller"></i> Colores</a></li>
+                    <li><a href="@Url.Action("Index", "Talla")"><i class="lni lni-ruler-pencil"></i> Tallas</a></li>
+                    <li><a href="@Url.Action("Index", "Genero")"><i class="lni lni-users"></i> Géneros</a></li>
+                </ul>
+            </li>
+
+            <!-- Ventas y Pedidos -->
+            <li class="nav-item nav-item-has-children">
+                <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_ventas" aria-controls="ddmenu_ventas" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon"><i class="lni lni-cart"></i></span>
+                    <span class="text">Ventas y Pedidos</span>
+                </a>
+                <ul id="ddmenu_ventas" class="collapse dropdown-nav">
+                    <li><a href="@Url.Action("Index", "Pedidos")"><i class="lni lni-clipboard"></i> Pedidos</a></li>
+                    <li><a href="@Url.Action("Index", "Carritos")"><i class="lni lni-cart"></i> Carritos</a></li>
+                    <li><a href="@Url.Action("Index", "Transacciones")"><i class="lni lni-credit-cards"></i> Transacciones</a></li>
+                </ul>
+            </li>
+
+            <!-- Marketing -->
+            <li class="nav-item nav-item-has-children">
+                <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_marketing" aria-controls="ddmenu_marketing" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon"><i class="lni lni-bullhorn"></i></span>
+                    <span class="text">Marketing</span>
+                </a>
+                <ul id="ddmenu_marketing" class="collapse dropdown-nav">
+                    <li><a href="@Url.Action("Index", "Promocion")"><i class="lni lni-shopping-basket"></i> Promociones</a></li>
+                    <li><a href="@Url.Action("Index", "Descuentos")"><i class="lni lni-dollar"></i> Descuentos</a></li>
+                    <li><a href="@Url.Action("Index", "Cupones")"><i class="lni lni-tag"></i> Cupones</a></li>
+                </ul>
+            </li>
+
+            <!-- Usuarios y Reseñas -->
+            <li class="nav-item nav-item-has-children">
+                <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_usuarios" aria-controls="ddmenu_usuarios" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon"><i class="lni lni-user"></i></span>
+                    <span class="text">Usuarios y Reseñas</span>
+                </a>
+                <ul id="ddmenu_usuarios" class="collapse dropdown-nav">
+                    <li><a href="@Url.Action("Index", "Usuarios")"><i class="lni lni-user"></i> Usuarios</a></li>
+                    <li><a href="@Url.Action("Index", "Reseñas")"><i class="lni lni-bubble"></i> Reseñas</a></li>
+                    <li><a href="@Url.Action("Index", "Favoritos")"><i class="lni lni-heart"></i> Favoritos</a></li>
+                </ul>
+            </li>
+
+            <!-- Notificaciones -->
+            <li class="nav-item">
+                <a href="@Url.Action("Index", "Notificaciones")">
+                    <span class="icon"><i class="lni lni-alarm"></i></span>
+                    <span class="text">Notificaciones</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</aside>

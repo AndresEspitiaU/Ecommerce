@@ -1,0 +1,126 @@
+﻿@model IEnumerable<Ecommerce.BD.Models.ProductoDescuento>
+
+@{
+    ViewData["Title"] = "Gestión de Descuentos por Producto";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid mt-5">
+    <h1 class="text-center mb-5">Gestión de Descuentos por Producto</h1>
+
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-text bg-primary text-white"><i class="lni lni-search"></i></span>
+                <input type="text" id="productoDescuentoSearch" class="form-control" placeholder="Buscar descuentos...">
+            </div>
+        </div>
+        <div class="col-md-6 text-end">
+            <a asp-action="Crear" class="btn btn-success btn-lg">
+                <i class="lni lni-plus"></i> Agregar Descuento a Producto
+            </a>
+        </div>
+    </div>
+
+    <div class="row" id="descuentosGrid">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-4 producto-descuento-item">
+                <div class="card shadow h-100 border-0 rounded-lg">
+                    <div class="card-header bg-gradient-primary py-3">
+                        <h5 class="card-title mb-0">
+                            @if (item.Producto != null)
+                            {
+                                @item.Producto.ProNombre
+                            }
+                            else
+                            {
+                                <span>Producto no disponible</span>
+                            }
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <strong><i class="lni lni-ticket me-2"></i>Descuento:</strong>
+                            @if (item.Descuento != null)
+                            {
+                                <span class="badge bg-success">@item.Descuento.DesNombre</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger">Descuento no disponible</span>
+                            }
+                        </p>
+                        <p class="card-text"><strong><i class="lni lni-calendar me-2"></i>Fecha Inicio:</strong> @item.FechaInicio.ToString("dd/MM/yyyy")</p>
+                        <p class="card-text"><strong><i class="lni lni-calendar me-2"></i>Fecha Fin:</strong> @item.FechaFin.ToString("dd/MM/yyyy")</p>
+                    </div>
+                    <div class="card-footer bg-light border-top-0">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a asp-action="Editar" asp-route-id="@item.ProductoDescuentoId" class="btn btn-outline-primary">
+                                <i class="lni lni-pencil me-1"></i> Editar
+                            </a>
+                            <button class="btn btn-outline-danger" onclick="confirmarEliminacion('@item.ProductoDescuentoId')">
+                                <i class="lni lni-close me-1"></i> Eliminar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).ready(function () {
+            $('#productoDescuentoSearch').on('keyup', function () {
+                var value = $(this).val().toLowerCase();
+                $('.producto-descuento-item').filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+
+        function confirmarEliminacion(id) {
+            Swal.fire({
+                title: '¿Eliminar este descuento?',
+                text: "Esta acción es irreversible. ¿Estás seguro?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    eliminarProductoDescuento(id);
+                }
+            });
+        }
+
+        function eliminarProductoDescuento(id) {
+            $.ajax({
+                url: '@Url.Action("EliminarConfirmado", "ProductoDescuentos")',
+                type: 'POST',
+                data: { id: id },
+                success: function (result) {
+                    if (result.success) {
+                        Swal.fire({
+                            title: '¡Eliminado!',
+                            text: 'El descuento ha sido eliminado con éxito.',
+                            icon: 'success'
+                        }).then(() => {
+                            location.reload();
+                        });
+                    } else {
+                        Swal.fire('Error', result.message, 'error');
+                    }
+                },
+                error: function () {
+                    Swal.fire('Error', 'Hubo un problema al eliminar el descuento.', 'error');
+                }
+            });
+        }
+    </script>
+}

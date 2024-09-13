@@ -1,0 +1,70 @@
+﻿@model Ecommerce.BD.Models.Genero
+
+@{
+    ViewData["Title"] = "Editar Género";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid py-4">
+    <h2 class="text-center mb-4">Editar Género</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form asp-action="Editar" method="post" id="generoForm">
+                <input type="hidden" asp-for="GeneroId" /> <!-- Campo oculto para el ID del género -->
+
+                <div class="mb-3">
+                    <label asp-for="GenNombre" class="form-label">Nombre del Género</label>
+                    <input asp-for="GenNombre" class="form-control" required />
+                    <span asp-validation-for="GenNombre" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="GenDescripcion" class="form-label">Descripción</label>
+                    <textarea asp-for="GenDescripcion" class="form-control" rows="3" required></textarea>
+                    <span asp-validation-for="GenDescripcion" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).ready(function () {
+            $('#generoForm').submit(function (e) {
+                e.preventDefault();
+
+                // Enviar el formulario via AJAX
+                $.ajax({
+                    url: '@Url.Action("Editar", "Genero")',
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function (data) {
+                        if (data.success) {
+                            Swal.fire({
+                                title: '¡Éxito!',
+                                text: data.message,
+                                icon: 'success'
+                            }).then(() => {
+                                // Redirigir al índice
+                                window.location.href = '@Url.Action("Index", "Genero")';
+                            });
+                        } else {
+                            Swal.fire('Error', data.message, 'error');
+                        }
+                    },
+                    error: function () {
+                        Swal.fire('Error', 'Hubo un problema al actualizar el género', 'error');
+                    }
+                });
+            });
+        });
+    </script>
+}

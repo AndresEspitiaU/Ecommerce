@@ -1,0 +1,248 @@
+﻿@model Ecommerce.BD.Models.Promocione
+@{
+    ViewData["Title"] = "Editar Promoción";
+    Layout = "_AdminLayout";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h2 class="mb-0">Editar Promoción</h2>
+        </div>
+        <div class="card-body">
+            <form asp-action="Editar" method="post" id="promocionForm" class="needs-validation" novalidate>
+                <input type="hidden" asp-for="PromocionId" />
+
+                <div class="step-wizard">
+                    <ul class="step-wizard-list mb-4">
+                        <li class="step-wizard-item current-item">
+                            <span class="progress-count">1</span>
+                            <span class="progress-label">Información Básica</span>
+                        </li>
+                        <li class="step-wizard-item">
+                            <span class="progress-count">2</span>
+                            <span class="progress-label">Fechas</span>
+                        </li>
+                        <li class="step-wizard-item">
+                            <span class="progress-count">3</span>
+                            <span class="progress-label">Descuentos</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="form-step" id="step1">
+                    <div class="mb-3">
+                        <label asp-for="PromNombre" class="form-label">Nombre de la promoción</label>
+                        <input asp-for="PromNombre" class="form-control" required />
+                        <div class="invalid-feedback">
+                            <span asp-validation-for="PromNombre"></span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="PromDescripcion" class="form-label">Descripción</label>
+                        <textarea asp-for="PromDescripcion" class="form-control" rows="3" required></textarea>
+                        <div class="invalid-feedback">
+                            <span asp-validation-for="PromDescripcion"></span>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary next-step">Siguiente</button>
+                </div>
+
+                <div class="form-step" id="step2" style="display: none;">
+                    <div class="mb-3">
+                        <label asp-for="PromFechaInicio" class="form-label">Fecha de inicio</label>
+                        <input asp-for="PromFechaInicio" class="form-control" type="date" required />
+                        <div class="invalid-feedback">
+                            <span asp-validation-for="PromFechaInicio"></span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="PromFechaFin" class="form-label">Fecha de finalización</label>
+                        <input asp-for="PromFechaFin" class="form-control" type="date" required />
+                        <div class="invalid-feedback">
+                            <span asp-validation-for="PromFechaFin"></span>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-secondary prev-step">Anterior</button>
+                    <button type="button" class="btn btn-primary next-step">Siguiente</button>
+                </div>
+
+                <div class="form-step" id="step3" style="display: none;">
+                    <div class="mb-3">
+                        <label asp-for="PromDescuentoPorcentaje" class="form-label">Descuento (%)</label>
+                        <div class="input-group">
+                            <input asp-for="PromDescuentoPorcentaje" class="form-control" type="number" step="0.01" min="0" max="100" required />
+                            <span class="input-group-text">%</span>
+                        </div>
+                        <div class="invalid-feedback">
+                            <span asp-validation-for="PromDescuentoPorcentaje"></span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="PromDescuentoMonto" class="form-label">Descuento (Monto)</label>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input asp-for="PromDescuentoMonto" class="form-control" type="number" step="0.01" min="0" required />
+                        </div>
+                        <div class="invalid-feedback">
+                            <span asp-validation-for="PromDescuentoMonto"></span>
+                        </div>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input asp-for="PromActivo" class="form-check-input" type="checkbox" />
+                        <label asp-for="PromActivo" class="form-check-label">Promoción activa</label>
+                    </div>
+                    <button type="button" class="btn btn-secondary prev-step">Anterior</button>
+                    <button type="submit" class="btn btn-success">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="mt-3">
+        <a asp-action="Index" class="btn btn-outline-secondary">Volver a la lista</a>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+            $('.next-step').click(function () {
+                var currentStep = $(this).closest('.form-step');
+                var nextStep = currentStep.next('.form-step');
+                if (nextStep.length > 0) {
+                    currentStep.hide();
+                    nextStep.show();
+                    updateProgressBar(nextStep.attr('id'));
+                }
+            });
+
+            $('.prev-step').click(function () {
+                var currentStep = $(this).closest('.form-step');
+                var prevStep = currentStep.prev('.form-step');
+                if (prevStep.length > 0) {
+                    currentStep.hide();
+                    prevStep.show();
+                    updateProgressBar(prevStep.attr('id'));
+                }
+            });
+
+            function updateProgressBar(stepId) {
+                var stepNumber = stepId.replace('step', '');
+                $('.step-wizard-item').removeClass('current-item');
+                $('.step-wizard-item:nth-child(' + stepNumber + ')').addClass('current-item');
+            }
+
+            // Validación del formulario
+            $('#promocionForm').submit(function (event) {
+                if (!this.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                $(this).addClass('was-validated');
+            });
+        });
+    </script>
+    <style>
+        .step-wizard {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .step-wizard-list {
+            list-style-type: none;
+            padding: 0;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .step-wizard-item {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+            .step-wizard-item:not(:last-child):after {
+                content: "";
+                position: absolute;
+                top: 20px;
+                left: 50%;
+                right: -50%;
+                height: 3px;
+                background: #e0e0e0;
+                z-index: -1;
+            }
+
+        .progress-count {
+            height: 40px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: 600;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+            color: #fff;
+        }
+
+            .progress-count:after {
+                content: "";
+                height: 40px;
+                width: 40px;
+                background: #ccc;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+                z-index: -10;
+            }
+
+            .progress-count:before {
+                content: "";
+                height: 10px;
+                width: 20px;
+                border-left: 3px solid #fff;
+                border-bottom: 3px solid #fff;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -60%) rotate(-45deg);
+                transform-origin: center center;
+            }
+
+        .progress-label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .current-item .progress-count:before,
+        .current-item ~ .step-wizard-item .progress-count:before {
+            display: none;
+        }
+
+        .current-item ~ .step-wizard-item .progress-count:after {
+            height: 10px;
+            width: 10px;
+        }
+
+        .current-item ~ .step-wizard-item .progress-label {
+            opacity: 0.5;
+        }
+
+        .current-item .progress-count:after {
+            background: #007bff;
+            border: 2px solid #007bff;
+        }
+
+        .current-item .progress-count {
+            color: #007bff;
+        }
+    </style>
+}

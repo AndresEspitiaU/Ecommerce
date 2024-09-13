@@ -1,0 +1,53 @@
+﻿@model Ecommerce.BD.Models.PromocionProducto
+
+@{
+    ViewData["Title"] = "Agregar Producto a la Promoción";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid py-4">
+    <h2 class="text-center mb-4">Agregar Producto a la Promoción: @ViewBag.Promocion?.PromNombre</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form asp-action="Crear" method="post">
+                <input type="hidden" asp-for="PromocionId" />
+
+                <div class="mb-3">
+                    <label asp-for="ProductoId" class="form-label">Producto</label>
+                    <select asp-for="ProductoId" asp-items="@(new SelectList(ViewBag.Productos, "ProductoId", "ProNombre"))" class="form-control">
+                        <option value="">Selecciona un producto</option>
+                    </select>
+                    <span asp-validation-for="ProductoId" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-success">Agregar Producto</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $('form').submit(function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: $(this).attr('action'),
+                type: 'POST',
+                data: $(this).serialize(),
+                success: function (result) {
+                    if (result.success) {
+                        Swal.fire('¡Éxito!', result.message, 'success').then(() => {
+                            window.location.href = '@Url.Action("Index", "PromocionProducto", new { promocionId = Model.PromocionId })';
+                        });
+                    } else {
+                        Swal.fire('Error', result.message, 'error');
+                    }
+                },
+                error: function () {
+                    Swal.fire('Error', 'Hubo un problema al agregar el producto.', 'error');
+                }
+            });
+        });
+    </script>
+}

@@ -1,0 +1,104 @@
+﻿@model IEnumerable<Ecommerce.BD.Models.Genero>
+
+@{
+    ViewData["Title"] = "Lista de Géneros";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid mt-4">
+    <h2 class="text-center mb-4">Lista de Géneros</h2>
+
+    <div class="row mb-4">
+        <div class="col-md-6 offset-md-3">
+            <div class="input-group">
+                <input type="text" id="generoSearch" class="form-control" placeholder="Buscar géneros...">
+                <div class="input-group-append">
+                    <a asp-action="Crear" class="btn btn-primary">
+                        <i class="fas fa-plus-circle"></i> Nuevo Género
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="generoGrid">
+        @foreach (var genero in Model)
+        {
+            <div class="col-md-3 col-sm-6 mb-4 genero-item">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">@genero.GenNombre</h5>
+                        <p class="card-text">Descripción: @genero.GenDescripcion</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <a asp-action="Editar" asp-route-id="@genero.GeneroId" class="btn btn-sm btn-outline-primary">
+                            <i class="fas fa-edit"></i> Editar
+                        </a>
+                        <button class="btn btn-sm btn-outline-danger" onclick="eliminarGenero(@genero.GeneroId)">
+                            <i class="fas fa-trash-alt"></i> Eliminar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).ready(function () {
+            $('#generoSearch').on('keyup', function () {
+                var value = $(this).val().toLowerCase();
+                $(".genero-item").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+
+        function eliminarGenero(id) {
+            var eliminarUrl = '@Url.Action("ConfirmarEliminacion", "Genero")';
+            console.log(eliminarUrl); // Verificar la URL generada
+
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "No podrás revertir esto",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: eliminarUrl, // Usar la URL generada y verificada
+                        type: 'POST',
+                        data: {
+                            id: id,
+                            __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val() // Añadir el token de validación si es necesario
+                        },
+                        success: function (data) {
+                            if (data.success) {
+                                Swal.fire('Eliminado', data.message, 'success').then(() => {
+                                    location.reload(); // Recarga la página después de eliminar
+                                });
+                            } else {
+                                Swal.fire('Error', data.message, 'error');
+                            }
+                        },
+                        error: function () {
+                            Swal.fire('Error', 'No se pudo eliminar el género', 'error');
+                        }
+                    });
+                }
+            });
+        }
+
+
+
+
+
+
+    </script>
+}

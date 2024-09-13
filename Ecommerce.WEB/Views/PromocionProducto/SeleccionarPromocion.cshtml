@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Ecommerce.BD.Models.Promocione>
+
+@{
+    ViewData["Title"] = "Seleccionar Promoción";
+    Layout = "_AdminLayout";
+}
+
+<h2 class="text-center">Selecciona una promoción para ver los productos asociados</h2>
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <select id="promocionSelect" class="form-control">
+                <option value="">Selecciona una promoción</option>
+                @foreach (var promocion in Model)
+                {
+                    <option value="@promocion.PromocionId">@promocion.PromNombre</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div id="productosEnPromocion" class="mt-4" style="display: none;">
+        <!-- Aquí se cargará la tabla de productos asociados a la promoción seleccionada -->
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById("promocionSelect").addEventListener("change", function () {
+            var promocionId = this.value;
+            if (promocionId) {
+                window.location.href = '@Url.Action("Index", "PromocionProducto")' + "?promocionId=" + promocionId;
+            }
+        });
+    </script>
+}

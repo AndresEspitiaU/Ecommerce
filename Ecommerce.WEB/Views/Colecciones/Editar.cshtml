@@ -1,0 +1,49 @@
+﻿@model Ecommerce.BD.Models.Coleccione
+
+@{
+    ViewData["Title"] = "Editar Colección";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid py-4">
+    <h2 class="text-center mb-4">Editar Colección</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form asp-action="Editar" method="post">
+                <input type="hidden" asp-for="ColeccionId" />
+
+                <div class="mb-3">
+                    <label asp-for="ColNombre" class="form-label">Nombre de la Colección</label>
+                    <input asp-for="ColNombre" class="form-control" required />
+                    <span asp-validation-for="ColNombre" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ColDescripcion" class="form-label">Descripción</label>
+                    <textarea asp-for="ColDescripcion" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="ColDescripcion" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ColImagenUrl" class="form-label">URL de Imagen</label>
+                    <input asp-for="ColImagenUrl" class="form-control" />
+                    <span asp-validation-for="ColImagenUrl" class="text-danger"></span>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input asp-for="ColActivo" class="form-check-input" type="checkbox" />
+                    <label asp-for="ColActivo" class="form-check-label">Colección Activa</label>
+                </div>
+
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

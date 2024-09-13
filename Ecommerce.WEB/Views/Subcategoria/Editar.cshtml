@@ -1,0 +1,72 @@
+﻿@model Ecommerce.BD.Models.Subcategoria
+
+@{
+    ViewData["Title"] = "Editar Subcategoría";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid py-4">
+    <h2 class="text-center mb-4">Editar Subcategoría</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form asp-action="Editar" method="post" id="subcategoriaForm">
+                <input type="hidden" asp-for="SubcategoriaId" />
+
+                <div class="mb-3">
+                    <label asp-for="SubNombre" class="form-label">Nombre de la Subcategoría</label>
+                    <input asp-for="SubNombre" class="form-control" required />
+                    <span asp-validation-for="SubNombre" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="SubImagenUrl" class="form-label">URL de Imagen</label>
+                    <input asp-for="SubImagenUrl" class="form-control" />
+                    <span asp-validation-for="SubImagenUrl" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="CategoriaId" class="form-label">Categoría Principal</label>
+                    <select asp-for="CategoriaId" class="form-control">
+                        <option value="">Selecciona una categoría</option>
+                        @* Aquí debes listar las categorías disponibles *@
+                    </select>
+                    <span asp-validation-for="CategoriaId" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-success">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).ready(function () {
+            $('#subcategoriaForm').submit(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: '@Url.Action("Editar", "Subcategoria")',
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function (data) {
+                        if (data.success) {
+                            Swal.fire('Éxito', data.message, 'success').then(() => {
+                                window.location.href = '@Url.Action("Index", "Subcategoria")';
+                            });
+                        } else {
+                            Swal.fire('Error', data.message, 'error');
+                        }
+                    },
+                    error: function () {
+                        Swal.fire('Error', 'Hubo un problema al actualizar la subcategoría', 'error');
+                    }
+                });
+            });
+        });
+    </script>
+}

@@ -1,0 +1,70 @@
+﻿@model Ecommerce.BD.Models.ProductoDescuento
+@{
+    ViewData["Title"] = "Agregar Descuento a Producto";
+    Layout = "_AdminLayout";
+}
+<div class="container-fluid py-4">
+    <h2 class="text-center mb-4">Agregar Descuento a Producto</h2>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form asp-action="Crear" method="post">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="ProductoId" class="form-label">Producto</label>
+                        <select asp-for="ProductoId" asp-items="@(new SelectList(ViewBag.Productos, "ProductoId", "ProNombre"))" class="form-select">
+                            <option value="">Selecciona un producto</option>
+                        </select>
+                        <span asp-validation-for="ProductoId" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="DescuentoId" class="form-label">Descuento</label>
+                        <select asp-for="DescuentoId" asp-items="@(new SelectList(ViewBag.Descuentos, "DescuentoId", "DesNombre"))" class="form-select">
+                            <option value="">Selecciona un descuento</option>
+                        </select>
+                        <span asp-validation-for="DescuentoId" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="FechaInicio" class="form-label">Fecha Inicio</label>
+                        <div class="input-group">
+                            <input asp-for="FechaInicio" class="form-control datepicker" type="text" required />
+                            <span class="input-group-text"><i class="lni lni-calendar"></i></span>
+                        </div>
+                        <span asp-validation-for="FechaInicio" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="FechaFin" class="form-label">Fecha Fin</label>
+                        <div class="input-group">
+                            <input asp-for="FechaFin" class="form-control datepicker" type="text" required />
+                            <span class="input-group-text"><i class="lni lni-calendar"></i></span>
+                        </div>
+                        <span asp-validation-for="FechaFin" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-success px-5">
+                        <i class="lni lni-save me-2"></i>Guardar
+                    </button>
+                    <a asp-action="Index" class="btn btn-secondary px-5 ms-2">
+                        <i class="lni lni-close me-2"></i>Cancelar
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            flatpickr(".datepicker", {
+                dateFormat: "Y-m-d",
+                allowInput: true,
+                minDate: "today",
+            });
+        });
+    </script>
+}

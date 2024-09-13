@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Administración</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Ecommerce.WEB.styles.css" asp-append-version="true" />
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+
+    <!-- ========== All CSS files linkup ========= -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/lineicons.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/fullcalendar.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/fullcalendar.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
+
+</head>
+<body>
+
+    <main class="main-wrapper">
+        <!-- Preloader -->
+        @* @await Html.PartialAsync("_Preloader") *@
+
+        <!-- Sidebar Navigation -->
+        @await Html.PartialAsync("_Sidebar")
+
+        <div class="overlay"></div>
+
+        <!-- Header -->
+        @await Html.PartialAsync("_Header")
+
+        <!-- Main Content -->
+        <section class="section">
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+        </section>
+
+        <!-- Footer -->
+        @await Html.PartialAsync("_Footer")
+    </main>
+
+
+    
+
+    <!-- ========= All Javascript files linkup ======== -->
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/Chart.min.js"></script>
+    <script src="~/js/dynamic-pie-chart.js"></script>
+    <script src="~/js/moment.min.js"></script>
+    <script src="~/js/fullcalendar.js"></script>
+    <script src="~/js/jvectormap.min.js"></script>
+    <script src="~/js/world-merc.js"></script>
+    <script src="~/js/polyfill.js"></script>
+    <script src="~/js/main.js"></script>
+
+    <!-- Bootstrap JS for Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

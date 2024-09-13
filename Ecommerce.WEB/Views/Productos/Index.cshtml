@@ -1,0 +1,140 @@
+﻿@model IEnumerable<Ecommerce.BD.Models.Producto>
+
+@{
+    ViewData["Title"] = "Gestión de Inventario";
+    Layout = "_AdminLayout";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Gestión de Inventario</h1>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="text" id="productoSearch" class="form-control" placeholder="Buscar productos...">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button">
+                                <i class="lni lni-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a asp-action="Crear" class="btn btn-success">
+                        <i class="lni lni-plus"></i> Agregar Producto
+                    </a>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover" id="productoTable">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var producto in Model)
+                        {
+                            <tr class="producto-item">
+                                <td>
+                                    <img src="@producto.ProImagenUrl" alt="@producto.ProNombre" class="img-thumbnail" style="max-width: 50px;">
+                                </td>
+                                <td>@producto.ProNombre</td>
+                                <td>$@producto.ProPrecio.ToString("F2")</td>
+                                <td>@producto.ProStock</td>
+                                <td>
+                                    <span class="badge @(producto.ProActivo ? "bg-success" : "bg-danger")">
+                                        @(producto.ProActivo ? "Activo" : "Inactivo")
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <a asp-action="Detalles" asp-route-id="@producto.ProductoId" class="btn btn-sm btn-info">
+                                            <i class="lni lni-eye"></i>
+                                        </a>
+                                        <a asp-action="Editar" asp-route-id="@producto.ProductoId" class="btn btn-sm btn-primary">
+                                            <i class="lni lni-pencil"></i>
+                                        </a>
+                                        <button class="btn btn-sm btn-danger" onclick="confirmarEliminacionProducto('@producto.ProductoId')">
+                                            <i class="lni lni-close"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var table = $('#productoTable').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
+                },
+                "pageLength": 5, // Mostrar 5 productos por defecto
+                "dom": 'lrtip' // Elimina la opción de cambiar la cantidad de registros visibles
+            });
+
+            $('#productoSearch').on('keyup', function () {
+                table.search(this.value).draw();
+            });
+        });
+
+        function confirmarEliminacionProducto(productoId) {
+            Swal.fire({
+                title: '¿Eliminar este producto?',
+                text: "Esta acción es irreversible. ¿Estás seguro?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    eliminarProducto(productoId);
+                }
+            });
+        }
+
+        function eliminarProducto(productoId) {
+            $.ajax({
+                url: '@Url.Action("EliminarConfirmado", "Productos")',
+                type: 'POST',
+                data: { id: productoId },
+                success: function (result) {
+                    Swal.fire({
+                        title: '¡Eliminado!',
+                        text: 'El producto ha sido eliminado con éxito.',
+                        icon: 'success'
+                    }).then(() => {
+                        location.reload();
+                    });
+                },
+                error: function () {
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'Hubo un problema al eliminar el producto.',
+                        icon: 'error'
+                    });
+                }
+            });
+        }
+    </script>
+}

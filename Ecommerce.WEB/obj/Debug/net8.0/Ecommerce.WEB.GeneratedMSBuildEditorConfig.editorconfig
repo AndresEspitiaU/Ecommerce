@@ -1,0 +1,259 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Ecommerce.WEB
+build_property.RootNamespace = Ecommerce.WEB
+build_property.ProjectDir = C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Categoria/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXENyZWFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Categoria/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Categoria/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Colecciones/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sZWNjaW9uZXNcQ3JlYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Colecciones/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sZWNjaW9uZXNcRWRpdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Colecciones/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sZWNjaW9uZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Colores/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sb3Jlc1xDcmVhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Colores/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sb3Jlc1xFZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Colores/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sb3Jlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Cupones/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3Vwb25lc1xDcmVhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Cupones/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3Vwb25lc1xFZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Cupones/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3Vwb25lc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Descuentos/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzY3VlbnRvc1xDcmVhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Descuentos/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzY3VlbnRvc1xFZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Descuentos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzY3VlbnRvc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Genero/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJvXENyZWFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Genero/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJvXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Genero/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Marcas/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FzXENyZWFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Marcas/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FzXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Marcas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/ProductoDescuentos/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9EZXNjdWVudG9zXENyZWFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/ProductoDescuentos/Detalles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9EZXNjdWVudG9zXERldGFsbGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/ProductoDescuentos/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9EZXNjdWVudG9zXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/ProductoDescuentos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9EZXNjdWVudG9zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/ProductoImagenes/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9JbWFnZW5lc1xDcmVhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/ProductoImagenes/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9JbWFnZW5lc1xFZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/ProductoImagenes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9JbWFnZW5lc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/ProductoImagenes/SeleccionarProducto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9JbWFnZW5lc1xTZWxlY2Npb25hclByb2R1Y3RvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Productos/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXENyZWFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Productos/Detalles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXERldGFsbGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Productos/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Productos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/PromocionProducto/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbW9jaW9uUHJvZHVjdG9cQ3JlYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/PromocionProducto/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbW9jaW9uUHJvZHVjdG9cRWRpdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/PromocionProducto/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbW9jaW9uUHJvZHVjdG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/PromocionProducto/SeleccionarPromocion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbW9jaW9uUHJvZHVjdG9cU2VsZWNjaW9uYXJQcm9tb2Npb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Promocion/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbW9jaW9uXENyZWFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Promocion/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbW9jaW9uXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Promocion/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbW9jaW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Shared/_Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Shared/_Header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Shared/_Sidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TaWRlYmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Subcategoria/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViY2F0ZWdvcmlhXENyZWFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Subcategoria/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViY2F0ZWdvcmlhXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Subcategoria/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViY2F0ZWdvcmlhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Talla/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFsbGFcQ3JlYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Talla/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFsbGFcRWRpdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Talla/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFsbGFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/57315/Documents/AndresEspitia/Ecommerce/Ecommerce.WEB/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-k1ikxr1s3n

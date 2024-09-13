@@ -1,0 +1,54 @@
+﻿@model Ecommerce.BD.Models.Marca
+@{
+    ViewData["Title"] = "Crear Nueva Marca";
+    Layout = "_AdminLayout";
+}
+
+<div class="container-fluid py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="h3 mb-4">Crear Nueva Marca</h1>
+            <form asp-action="Crear" method="post" id="crearMarcaForm" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label asp-for="MarNombre" class="form-label">Nombre de la Marca</label>
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="bi bi-tag"></i>
+                        </span>
+                        <input asp-for="MarNombre" class="form-control" required minlength="2" maxlength="50">
+                        <div class="invalid-feedback">
+                            Por favor, ingrese un nombre válido para la marca (2-50 caracteres).
+                        </div>
+                    </div>
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-check-circle me-2"></i>Crear Marca
+                    </button>
+                    <a asp-action="Index" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left me-2"></i>Volver al Listado
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+}

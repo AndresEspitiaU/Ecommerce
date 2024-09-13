@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Ecommerce.BD.Models.Producto>
+@{
+    ViewData["Title"] = "Seleccionar Producto";
+    Layout = "_AdminLayout";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Selecciona un producto para ver sus imágenes</h2>
+                    <div class="form-group">
+                        <select id="productoSelect" class="form-select form-select-lg">
+                            <option value="">Selecciona un producto</option>
+                            @if (ViewBag.Productos != null)
+                            {
+                                @foreach (var producto in ViewBag.Productos)
+                                {
+                                    <option value="@producto.ProductoId">@producto.ProNombre</option>
+                                }
+                            }
+                            else
+                            {
+                                <option value="" disabled>No hay productos disponibles</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById("productoSelect").addEventListener("change", function () {
+            var productoId = this.value;
+            if (productoId) {
+                window.location.href = '@Url.Action("Index", "ProductoImagenes")' + "?productoId=" + productoId;
+            }
+        });
+    </script>
+}
