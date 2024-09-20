@@ -14,11 +14,42 @@ namespace Ecommerce.PRC.Servicios
             _productoRepositorio = productoRepositorio;
         }
 
-        // Obtener todos los productos (opcionalmente filtrado por categoría o subcategoría)
+        public async Task<int> ContarProductosPorCategoriaAsync(int categoriaId)
+        {
+            return await _productoRepositorio.ContarProductosPorCategoriaAsync(categoriaId);
+        }
+
+
+        /// <summary>
+        /// Devuelve una lista de todos los productos
+        /// </summary>
+        /// <param name="categoriaId"></param>
+        /// <param name="subcategoriaId"></param>
+        /// <returns></returns>
         public async Task<List<Producto>> ObtenerTodosLosProductosAsync(int? categoriaId = null, int? subcategoriaId = null)
         {
             return await _productoRepositorio.ObtenerTodosLosProductosAsync(categoriaId, subcategoriaId);
         }
+
+        /// <summary>
+        /// Devuelve una lista de productos activos
+        /// </summary>
+        /// <param name="categoriaId"></param>
+        /// <param name="subcategoriaId"></param>
+        /// <returns></returns>
+        public async Task<List<Producto>> ObtenerProductosActivosAsync(int? categoriaId = null, int? subcategoriaId = null)
+        {
+            return await _productoRepositorio.ObtenerProductosActivosAsync(categoriaId, subcategoriaId);
+        }
+
+
+        public async Task<List<Producto>> ObtenerProductosFiltradosAsync(List<int> categoriaIds, List<int> marcaIds, decimal? precioMin, decimal? precioMax)
+        {
+            return await _productoRepositorio.ObtenerProductosFiltradosAsync(categoriaIds, marcaIds, precioMin, precioMax);
+        }
+
+
+
 
         // Obtener producto por ID
         public async Task<Producto> ObtenerProductoPorIdAsync(int id)

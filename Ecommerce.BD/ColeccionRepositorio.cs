@@ -23,6 +23,21 @@ namespace Ecommerce.BD.Repositorios
                 .ToListAsync();
         }
 
+
+
+        public async Task<List<Coleccione>> ObtenerColeccionesActivasAsync()
+        {
+            var coleccionesActivas = await _contexto.Colecciones
+                .Where(c => c.ColActivo)
+                .ToListAsync();
+
+            // Log para verificar la cantidad de colecciones activas
+            Console.WriteLine($"Cantidad de colecciones activas: {coleccionesActivas.Count}");
+
+            return coleccionesActivas ?? new List<Coleccione>();  // Asegurarse de que nunca sea null
+        }
+
+
         // Obtener una colección por su ID
         public async Task<Coleccione> ObtenerColeccionPorIdAsync(int id)
         {

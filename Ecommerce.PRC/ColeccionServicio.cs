@@ -20,6 +20,12 @@ namespace Ecommerce.PRC.Servicios
             return await _coleccionRepositorio.ObtenerTodasLasColeccionesAsync();
         }
 
+        // Obtener solo las colecciones activas
+        public async Task<List<Coleccione>> ObtenerColeccionesActivasAsync()
+        {
+            return await _coleccionRepositorio.ObtenerColeccionesActivasAsync();
+        }
+
         // Obtener una colección por su ID
         public async Task<Coleccione> ObtenerColeccionPorIdAsync(int id)
         {

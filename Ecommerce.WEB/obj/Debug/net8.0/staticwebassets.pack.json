@@ -9,6 +9,42 @@
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
     },
     {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\css\\css_cliente\\CategoriaStyle.css",
+      "PackagePath": "staticwebassets\\css\\css_cliente\\CategoriaStyle.css"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\css\\css_cliente\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\css_cliente\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\css\\css_cliente\\elegant-icons.css",
+      "PackagePath": "staticwebassets\\css\\css_cliente\\elegant-icons.css"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\css\\css_cliente\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\css\\css_cliente\\font-awesome.min.css"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\css\\css_cliente\\jquery-ui.min.css",
+      "PackagePath": "staticwebassets\\css\\css_cliente\\jquery-ui.min.css"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\css\\css_cliente\\magnific-popup.css",
+      "PackagePath": "staticwebassets\\css\\css_cliente\\magnific-popup.css"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\css\\css_cliente\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\css\\css_cliente\\owl.carousel.min.css"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\css\\css_cliente\\slicknav.min.css",
+      "PackagePath": "staticwebassets\\css\\css_cliente\\slicknav.min.css"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\css\\css_cliente\\style.css",
+      "PackagePath": "staticwebassets\\css\\css_cliente\\style.css"
+    },
+    {
       "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\css\\fullcalendar.css",
       "PackagePath": "staticwebassets\\css\\fullcalendar.css"
     },
@@ -39,6 +75,46 @@
     {
       "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\fonts\\ElegantIcons.eot",
+      "PackagePath": "staticwebassets\\fonts\\ElegantIcons.eot"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\fonts\\ElegantIcons.svg",
+      "PackagePath": "staticwebassets\\fonts\\ElegantIcons.svg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\fonts\\ElegantIcons.ttf",
+      "PackagePath": "staticwebassets\\fonts\\ElegantIcons.ttf"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\fonts\\ElegantIcons.woff",
+      "PackagePath": "staticwebassets\\fonts\\ElegantIcons.woff"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff2"
     },
     {
       "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\fonts\\lineicons.eot",
@@ -273,6 +349,326 @@
       "PackagePath": "staticwebassets\\images\\projects\\image-3.png"
     },
     {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\banner\\banner-1.jpg",
+      "PackagePath": "staticwebassets\\img\\banner\\banner-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\banner\\banner-2.jpg",
+      "PackagePath": "staticwebassets\\img\\banner\\banner-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\banner\\banner-3.jpg",
+      "PackagePath": "staticwebassets\\img\\banner\\banner-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\blog\\blog-1.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\blog-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\blog\\blog-10.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\blog-10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\blog\\blog-2.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\blog-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\blog\\blog-3.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\blog-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\blog\\blog-4.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\blog-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\blog\\blog-5.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\blog-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\blog\\blog-6.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\blog-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\blog\\blog-7.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\blog-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\blog\\blog-8.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\blog-8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\blog\\blog-9.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\blog-9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\blog\\details\\blog-details.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\details\\blog-details.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\blog\\details\\comment-1.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\details\\comment-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\blog\\details\\comment-2.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\details\\comment-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\blog\\details\\comment-3.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\details\\comment-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\blog\\sidebar\\fp-1.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\sidebar\\fp-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\blog\\sidebar\\fp-2.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\sidebar\\fp-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\blog\\sidebar\\fp-3.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\sidebar\\fp-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\categories\\category-1.jpg",
+      "PackagePath": "staticwebassets\\img\\categories\\category-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\categories\\category-2.jpg",
+      "PackagePath": "staticwebassets\\img\\categories\\category-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\categories\\category-3.jpg",
+      "PackagePath": "staticwebassets\\img\\categories\\category-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\categories\\category-4.jpg",
+      "PackagePath": "staticwebassets\\img\\categories\\category-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\categories\\category-5.jpg",
+      "PackagePath": "staticwebassets\\img\\categories\\category-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\discount.jpg",
+      "PackagePath": "staticwebassets\\img\\discount.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\instagram\\insta-1.jpg",
+      "PackagePath": "staticwebassets\\img\\instagram\\insta-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\instagram\\insta-2.jpg",
+      "PackagePath": "staticwebassets\\img\\instagram\\insta-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\instagram\\insta-3.jpg",
+      "PackagePath": "staticwebassets\\img\\instagram\\insta-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\instagram\\insta-4.jpg",
+      "PackagePath": "staticwebassets\\img\\instagram\\insta-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\instagram\\insta-5.jpg",
+      "PackagePath": "staticwebassets\\img\\instagram\\insta-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\instagram\\insta-6.jpg",
+      "PackagePath": "staticwebassets\\img\\instagram\\insta-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\payment\\payment-1.png",
+      "PackagePath": "staticwebassets\\img\\payment\\payment-1.png"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\payment\\payment-2.png",
+      "PackagePath": "staticwebassets\\img\\payment\\payment-2.png"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\payment\\payment-3.png",
+      "PackagePath": "staticwebassets\\img\\payment\\payment-3.png"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\payment\\payment-4.png",
+      "PackagePath": "staticwebassets\\img\\payment\\payment-4.png"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\payment\\payment-5.png",
+      "PackagePath": "staticwebassets\\img\\payment\\payment-5.png"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\product\\details\\product-1.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\details\\product-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\product\\details\\product-2.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\details\\product-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\product\\details\\product-3.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\details\\product-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\product\\details\\product-4.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\details\\product-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\product\\details\\thumb-1.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\details\\thumb-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\product\\details\\thumb-2.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\details\\thumb-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\product\\details\\thumb-3.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\details\\thumb-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\product\\details\\thumb-4.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\details\\thumb-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\product\\product-1.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\product-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\product\\product-2.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\product-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\product\\product-3.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\product-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\product\\product-4.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\product-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\product\\product-5.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\product-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\product\\product-6.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\product-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\product\\product-7.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\product-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\product\\product-8.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\product-8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\product\\related\\rp-1.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\related\\rp-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\product\\related\\rp-2.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\related\\rp-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\product\\related\\rp-3.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\related\\rp-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\product\\related\\rp-4.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\related\\rp-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\shop-cart\\cp-1.jpg",
+      "PackagePath": "staticwebassets\\img\\shop-cart\\cp-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\shop-cart\\cp-2.jpg",
+      "PackagePath": "staticwebassets\\img\\shop-cart\\cp-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\shop-cart\\cp-3.jpg",
+      "PackagePath": "staticwebassets\\img\\shop-cart\\cp-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\shop-cart\\cp-4.jpg",
+      "PackagePath": "staticwebassets\\img\\shop-cart\\cp-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\shop\\shop-1.jpg",
+      "PackagePath": "staticwebassets\\img\\shop\\shop-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\shop\\shop-2.jpg",
+      "PackagePath": "staticwebassets\\img\\shop\\shop-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\shop\\shop-3.jpg",
+      "PackagePath": "staticwebassets\\img\\shop\\shop-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\shop\\shop-4.jpg",
+      "PackagePath": "staticwebassets\\img\\shop\\shop-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\shop\\shop-5.jpg",
+      "PackagePath": "staticwebassets\\img\\shop\\shop-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\shop\\shop-6.jpg",
+      "PackagePath": "staticwebassets\\img\\shop\\shop-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\shop\\shop-7.jpg",
+      "PackagePath": "staticwebassets\\img\\shop\\shop-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\shop\\shop-8.jpg",
+      "PackagePath": "staticwebassets\\img\\shop\\shop-8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\shop\\shop-9.jpg",
+      "PackagePath": "staticwebassets\\img\\shop\\shop-9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\trend\\bs-1.jpg",
+      "PackagePath": "staticwebassets\\img\\trend\\bs-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\trend\\bs-2.jpg",
+      "PackagePath": "staticwebassets\\img\\trend\\bs-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\trend\\bs-3.jpg",
+      "PackagePath": "staticwebassets\\img\\trend\\bs-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\trend\\f-1.jpg",
+      "PackagePath": "staticwebassets\\img\\trend\\f-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\trend\\f-2.jpg",
+      "PackagePath": "staticwebassets\\img\\trend\\f-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\trend\\f-3.jpg",
+      "PackagePath": "staticwebassets\\img\\trend\\f-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\trend\\ht-1.jpg",
+      "PackagePath": "staticwebassets\\img\\trend\\ht-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\trend\\ht-2.jpg",
+      "PackagePath": "staticwebassets\\img\\trend\\ht-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\img\\trend\\ht-3.jpg",
+      "PackagePath": "staticwebassets\\img\\trend\\ht-3.jpg"
+    },
+    {
       "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\js\\Chart.min.js",
       "PackagePath": "staticwebassets\\js\\Chart.min.js"
     },
@@ -287,6 +683,46 @@
     {
       "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\js\\fullcalendar.js",
       "PackagePath": "staticwebassets\\js\\fullcalendar.js"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\js\\js_cliente\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\js_cliente\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\js\\js_cliente\\jquery-3.3.1.min.js",
+      "PackagePath": "staticwebassets\\js\\js_cliente\\jquery-3.3.1.min.js"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\js\\js_cliente\\jquery-ui.min.js",
+      "PackagePath": "staticwebassets\\js\\js_cliente\\jquery-ui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\js\\js_cliente\\jquery.countdown.min.js",
+      "PackagePath": "staticwebassets\\js\\js_cliente\\jquery.countdown.min.js"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\js\\js_cliente\\jquery.magnific-popup.min.js",
+      "PackagePath": "staticwebassets\\js\\js_cliente\\jquery.magnific-popup.min.js"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\js\\js_cliente\\jquery.nicescroll.min.js",
+      "PackagePath": "staticwebassets\\js\\js_cliente\\jquery.nicescroll.min.js"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\js\\js_cliente\\jquery.slicknav.js",
+      "PackagePath": "staticwebassets\\js\\js_cliente\\jquery.slicknav.js"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\js\\js_cliente\\main.js",
+      "PackagePath": "staticwebassets\\js\\js_cliente\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\js\\js_cliente\\mixitup.min.js",
+      "PackagePath": "staticwebassets\\js\\js_cliente\\mixitup.min.js"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\js\\js_cliente\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\js\\js_cliente\\owl.carousel.min.js"
     },
     {
       "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\js\\jvectormap.min.js",
@@ -543,6 +979,82 @@
     {
       "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\sass\\_base.scss",
+      "PackagePath": "staticwebassets\\sass\\_base.scss"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\sass\\_blog-details.scss",
+      "PackagePath": "staticwebassets\\sass\\_blog-details.scss"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\sass\\_blog-sidebar.scss",
+      "PackagePath": "staticwebassets\\sass\\_blog-sidebar.scss"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\sass\\_blog.scss",
+      "PackagePath": "staticwebassets\\sass\\_blog.scss"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\sass\\_breadcrumb.scss",
+      "PackagePath": "staticwebassets\\sass\\_breadcrumb.scss"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\sass\\_categories.scss",
+      "PackagePath": "staticwebassets\\sass\\_categories.scss"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\sass\\_checkout.scss",
+      "PackagePath": "staticwebassets\\sass\\_checkout.scss"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\sass\\_contact.scss",
+      "PackagePath": "staticwebassets\\sass\\_contact.scss"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\sass\\_footer.scss",
+      "PackagePath": "staticwebassets\\sass\\_footer.scss"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\sass\\_header.scss",
+      "PackagePath": "staticwebassets\\sass\\_header.scss"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\sass\\_home-page.scss",
+      "PackagePath": "staticwebassets\\sass\\_home-page.scss"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\sass\\_mixins.scss",
+      "PackagePath": "staticwebassets\\sass\\_mixins.scss"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\sass\\_product-details.scss",
+      "PackagePath": "staticwebassets\\sass\\_product-details.scss"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\sass\\_product.scss",
+      "PackagePath": "staticwebassets\\sass\\_product.scss"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\sass\\_responsive.scss",
+      "PackagePath": "staticwebassets\\sass\\_responsive.scss"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\sass\\_shop-cart.scss",
+      "PackagePath": "staticwebassets\\sass\\_shop-cart.scss"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\sass\\_shop.scss",
+      "PackagePath": "staticwebassets\\sass\\_shop.scss"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\sass\\_variable.scss",
+      "PackagePath": "staticwebassets\\sass\\_variable.scss"
+    },
+    {
+      "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\sass\\style.scss",
+      "PackagePath": "staticwebassets\\sass\\style.scss"
     },
     {
       "Id": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\wwwroot\\scss\\_common.scss",

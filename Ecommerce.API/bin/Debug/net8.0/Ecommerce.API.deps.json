@@ -666,7 +666,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.8"
         },
         "runtime": {
-          "Ecommerce.BD.dll": {}
+          "Ecommerce.BD.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Ecommerce.PRC/1.0.0": {
@@ -674,7 +677,10 @@
           "Ecommerce.BD": "1.0.0"
         },
         "runtime": {
-          "Ecommerce.PRC.dll": {}
+          "Ecommerce.PRC.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

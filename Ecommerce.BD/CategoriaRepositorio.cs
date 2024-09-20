@@ -15,10 +15,13 @@ namespace Ecommerce.BD.Repositorios
             _contexto = contexto;
         }
 
+
+
+
         // Obtener todas las categorías
         public async Task<List<Categoria>> ObtenerTodasLasCategoriasAsync()
         {
-            return await _contexto.Categorias.FromSqlRaw("EXEC Categoria_list").ToListAsync();
+            return await _contexto.Categorias.ToListAsync();  
         }
 
         // Obtener una categoría por ID

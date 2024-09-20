@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Ecommerce.BD.Models.Banner>
+
+@if (Model != null && Model.Any())
+{
+    <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            @{
+                var isFirst = true;
+            }
+            @foreach (var banner in Model)
+            {
+                <div class="carousel-item @(isFirst ? "active" : "")">
+                    <!-- Asegúrate de que la imagen ocupe todo el ancho disponible -->
+                    <img src="@banner.Imagen" class="d-block w-100" alt="@banner.Nombre" style="height: 500px; object-fit: cover;">
+                   
+                </div>
+                isFirst = false;
+            }
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+}
+
+@section Scripts {
+    <script>
+        var myCarousel = document.querySelector('#bannerCarousel');
+        var carousel = new bootstrap.Carousel(myCarousel, {
+            interval: 5000,
+            ride: 'carousel'
+        });
+    </script>
+}

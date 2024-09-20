@@ -58,7 +58,12 @@ builder.Services.AddScoped<ProductoImagenRepositorio>();
 builder.Services.AddScoped<ProductoImagenServicio>();
 builder.Services.AddScoped<PromocionProductoRepositorio>();
 builder.Services.AddScoped<PromocionProductoServicio>();
-
+builder.Services.AddScoped<UsuarioRepositorio>();
+builder.Services.AddScoped<UsuarioServicio>();
+builder.Services.AddScoped<BannerRepositorio>();
+builder.Services.AddScoped<BannerServicio>();
+builder.Services.AddScoped<ProductoPorGeneroRepositorio>();
+builder.Services.AddScoped<ProductoPorGeneroServicio>();
 
 
 

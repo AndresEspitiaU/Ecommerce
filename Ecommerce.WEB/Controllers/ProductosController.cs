@@ -10,11 +10,11 @@ namespace Ecommerce.WEB.Controllers
     public class ProductosController : Controller
     {
         private readonly ProductoServicio _productoServicio;
-        private readonly CategoriaServicio _categoriaServicio;  // Para obtener las categorías
-        private readonly SubcategoriaServicio _subcategoriaServicio;  // Para obtener las subcategorías
-        private readonly MarcaServicio _marcaServicio;  // Para obtener las marcas
-        private readonly ColeccionServicio _coleccionServicio;  // Para obtener las colecciones
-        private readonly GeneroServicio _generoServicio;  // Para obtener los géneros
+        private readonly CategoriaServicio _categoriaServicio;  
+        private readonly SubcategoriaServicio _subcategoriaServicio;  
+        private readonly MarcaServicio _marcaServicio; 
+        private readonly ColeccionServicio _coleccionServicio;  
+        private readonly GeneroServicio _generoServicio;  
 
         public ProductosController(
             ProductoServicio productoServicio,
@@ -32,14 +32,23 @@ namespace Ecommerce.WEB.Controllers
             _generoServicio = generoServicio;
         }
 
-        // GET: Productos
+        /// <summary>
+        /// Devuelve una lista de todos los productos
+        /// Metodo GET para la vista Index
+        /// </summary>
+        /// <returns></returns>
         public async Task<IActionResult> Index()
         {
-            List<Producto> productos = await _productoServicio.ObtenerTodosLosProductosAsync();
-            return View(productos);
+            List<Producto> TodosLosProductos = await _productoServicio.ObtenerTodosLosProductosAsync(null);
+            return View(TodosLosProductos);
         }
 
-        // GET: Productos/Detalles/5
+        /// <summary>
+        /// Devuelve un producto por ID
+        /// Metodo GET para la vista Detalles
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Detalles(int id)
         {
             var producto = await _productoServicio.ObtenerProductoPorIdAsync(id);
@@ -144,6 +153,30 @@ namespace Ecommerce.WEB.Controllers
             ViewBag.Colecciones = new SelectList(await _coleccionServicio.ObtenerTodasLasColeccionesAsync(), "ColeccionId", "ColNombre", producto?.ProColeccionId);
             ViewBag.Generos = new SelectList(await _generoServicio.ObtenerTodosLosGenerosAsync(), "GeneroId", "GenNombre", producto?.ProGeneroId);
         }
+
+        // Acción para obtener productos por categoría
+        public async Task<IActionResult> ProductosPorCategoria(int categoriaId, string searchTerm = "", decimal? minPrice = null, decimal? maxPrice = null)
+        {
+            List<Producto> productos = await _productoServicio.ObtenerTodosLosProductosAsync(categoriaId);
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                productos = productos.Where(p => p.ProNombre.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)).ToList();
+            }
+            if (minPrice.HasValue)
+            {
+                productos = productos.Where(p => p.ProPrecio >= minPrice.Value).ToList();
+            }
+            if (maxPrice.HasValue)
+            {
+                productos = productos.Where(p => p.ProPrecio <= maxPrice.Value).ToList();
+            }
+            ViewData["CategoriaId"] = categoriaId;
+            ViewData["SearchTerm"] = searchTerm;
+            ViewData["MinPrice"] = minPrice;
+            ViewData["MaxPrice"] = maxPrice;
+            return View(productos);
+        }
+
 
     }
 }

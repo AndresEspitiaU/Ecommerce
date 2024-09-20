@@ -15,30 +15,53 @@ namespace Ecommerce.BD.Repositorios
             _contexto = contexto;
         }
 
-        // Obtener todos los productos (opcionalmente filtrado por categoría o subcategoría)
+        public async Task<int> ContarProductosPorCategoriaAsync(int categoriaId)
+        {
+            // Cuenta cuántos productos pertenecen a una categoría específica
+            return await _contexto.Productos.CountAsync(p => p.ProCategoriaId == categoriaId);
+        }
+
+
+        // Obtener todos los productos (sin importar si están activos o no)
         public async Task<List<Producto>> ObtenerTodosLosProductosAsync(int? categoriaId = null, int? subcategoriaId = null)
         {
-            var parametros = new List<SqlParameter>();
-
-            // Parámetro para categoría
-            var parametroCategoria = new SqlParameter("@ProCategoriaId", categoriaId ?? (object)DBNull.Value);
-            parametros.Add(parametroCategoria);
-
-            // Parámetro para subcategoría
-            var parametroSubcategoria = new SqlParameter("@SubcategoriaId", subcategoriaId ?? (object)DBNull.Value);
-            parametros.Add(parametroSubcategoria);
+            var parametros = new List<SqlParameter>
+            {
+                 new SqlParameter("@ProCategoriaId", categoriaId ?? (object)DBNull.Value),
+                 new SqlParameter("@SubcategoriaId", subcategoriaId ?? (object)DBNull.Value)
+            };
 
             return await _contexto.Productos
                 .FromSqlRaw("EXEC Producto_list @ProCategoriaId, @SubcategoriaId", parametros.ToArray())
                 .ToListAsync();
         }
 
+        // Obtener solo productos activos
+        // Obtener solo productos activos
+        public async Task<List<Producto>> ObtenerProductosActivosAsync(int? categoriaId = null, int? subcategoriaId = null)
+        {
+            var parametros = new List<SqlParameter>
+    {
+        new SqlParameter("@ProCategoriaId", categoriaId ?? (object)DBNull.Value),
+        new SqlParameter("@SubcategoriaId", subcategoriaId ?? (object)DBNull.Value)
+    };
+
+            return _contexto.Productos
+                .FromSqlRaw("EXEC Producto_list @ProCategoriaId, @SubcategoriaId", parametros.ToArray())
+                .AsEnumerable()  
+                .Where(p => p.ProActivo)  
+                .ToList(); 
+        }
+
+
+
+
         // Obtener una imagen por su ID
         public async Task<ProductoImagene> ObtenerImagenPorIdAsync(int imagenId)
         {
             var parametro = new SqlParameter("@ImagenId", imagenId);
             var imagen = await _contexto.ProductoImagenes
-                .FromSqlRaw("EXEC ProductoImagen_listPorId @ImagenId", parametro)  // Procedimiento almacenado para obtener una imagen por su ID
+                .FromSqlRaw("EXEC ProductoImagen_listPorId @ImagenId", parametro)  
                 .FirstOrDefaultAsync();
 
             return imagen;
@@ -50,6 +73,7 @@ namespace Ecommerce.BD.Repositorios
         {
             var parametro = new SqlParameter("@ProductoId", id);
 
+            // Obtenemos el producto con el procedimiento almacenado
             var productos = await _contexto.Productos
                 .FromSqlRaw("EXEC Producto_listPorId @ProductoId", parametro)
                 .ToListAsync();
@@ -58,7 +82,8 @@ namespace Ecommerce.BD.Repositorios
 
             if (producto != null)
             {
-                // Cargar las referencias (opcional, si ya están incluidas no es necesario)
+                // Cargar las referencias relacionadas como las imágenes
+                await _contexto.Entry(producto).Collection(p => p.ProductoImagenes).LoadAsync();  // Cargar las imágenes
                 await _contexto.Entry(producto).Reference(p => p.ProCategoria).LoadAsync();
                 await _contexto.Entry(producto).Reference(p => p.Subcategoria).LoadAsync();
                 await _contexto.Entry(producto).Reference(p => p.ProMarca).LoadAsync();
@@ -68,12 +93,48 @@ namespace Ecommerce.BD.Repositorios
 
             return producto;
         }
-    
 
 
 
-    // Insertar un nuevo producto
-    public async Task<int> InsertarProductoAsync(Producto producto)
+        //ObtenerProductosFiltradosAsync
+        public async Task<List<Producto>> ObtenerProductosFiltradosAsync(List<int> categoriaIds, List<int> marcaIds, decimal? precioMin, decimal? precioMax)
+        {
+            var productosQuery = _contexto.Productos.AsQueryable();
+
+            // Filtro por categorías
+            if (categoriaIds != null && categoriaIds.Any())
+            {
+                productosQuery = productosQuery.Where(p => categoriaIds.Contains(p.ProCategoriaId ?? 0));
+            }
+
+            // Filtro por marcas
+            if (marcaIds != null && marcaIds.Any())
+            {
+                productosQuery = productosQuery.Where(p => marcaIds.Contains(p.ProMarcaId ?? 0));
+            }
+
+            // Filtro por rango de precios
+            if (precioMin.HasValue)
+            {
+                productosQuery = productosQuery.Where(p => p.ProPrecio >= precioMin.Value);
+            }
+
+            if (precioMax.HasValue)
+            {
+                productosQuery = productosQuery.Where(p => p.ProPrecio <= precioMax.Value);
+            }
+
+            // Solo productos activos
+            productosQuery = productosQuery.Where(p => p.ProActivo);
+
+            // Ejecutar la consulta y devolver los resultados
+            return await productosQuery.ToListAsync();
+        }
+
+
+
+        // Insertar un nuevo producto
+        public async Task<int> InsertarProductoAsync(Producto producto)
         {
             var parametros = new[]
             {

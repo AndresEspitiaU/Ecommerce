@@ -17,6 +17,7 @@ public partial class EcommerceContext : IdentityDbContext<IdentityUser>
     {
     }
 
+    public virtual DbSet<Banner> Banners { get; set; }
     public virtual DbSet<Carrito> Carritos { get; set; }
 
     public virtual DbSet<CarritoItem> CarritoItems { get; set; }

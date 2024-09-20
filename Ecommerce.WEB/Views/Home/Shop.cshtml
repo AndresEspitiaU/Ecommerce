@@ -1,0 +1,178 @@
+﻿@model IEnumerable<Ecommerce.BD.Models.Producto>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar de Filtros -->
+        <div class="col-lg-3 p-4 bg-light sidebar">
+            <h4 class="mb-4 text-primary">Filtros</h4>
+
+            <form method="get" id="filterForm">
+                <!-- Filtro de Categorías -->
+                <div class="mb-4">
+                    <h5 class="text-secondary">Categorías</h5>
+                    <div class="overflow-auto filter-scroll" style="max-height: 200px;">
+                        @foreach (var categoria in ViewData["Categorias"] as List<Ecommerce.BD.Models.Categoria>)
+                        {
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="categoriaIds" value="@categoria.CategoriaId" id="cat_@categoria.CategoriaId"
+                                @(ViewContext.HttpContext.Request.Query["categoriaIds"].Contains(categoria.CategoriaId.ToString()) ? "checked" : "") />
+                                <label class="form-check-label" for="cat_@categoria.CategoriaId">@categoria.CatNombre</label>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <!-- Filtro de Marcas -->
+                <div class="mb-4">
+                    <h5 class="text-secondary">Marcas</h5>
+                    <div class="overflow-auto filter-scroll" style="max-height: 200px;">
+                        @foreach (var marca in ViewData["Marcas"] as List<Ecommerce.BD.Models.Marca>)
+                        {
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="marcaIds" value="@marca.MarcaId" id="marca_@marca.MarcaId"
+                                @(ViewContext.HttpContext.Request.Query["marcaIds"].Contains(marca.MarcaId.ToString()) ? "checked" : "") />
+                                <label class="form-check-label" for="marca_@marca.MarcaId">@marca.MarNombre</label>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <!-- Filtro de Precios -->
+                <div class="mb-4">
+                    <h5 class="text-secondary">Rango de Precios</h5>
+                    <div class="d-flex">
+                        <input type="number" name="precioMin" class="form-control me-2" placeholder="Mínimo" value="@ViewContext.HttpContext.Request.Query["precioMin"]" />
+                        <input type="number" name="precioMax" class="form-control" placeholder="Máximo" value="@ViewContext.HttpContext.Request.Query["precioMax"]" />
+                    </div>
+                </div>
+
+                <!-- Botón para aplicar filtros -->
+                <button type="submit" class="btn btn-primary w-100">Aplicar Filtros</button>
+            </form>
+        </div>
+
+        <!-- Sección de Productos -->
+        <div class="col-lg-9 p-4">
+            <h4 class="mb-4 text-primary">Nuestros Productos</h4>
+
+            @if (Model != null && Model.Any())
+            {
+                <div class="row g-4">
+                    @foreach (var producto in Model)
+                    {
+                        <div class="col-12 col-sm-6 col-md-4 col-xl-3">
+                            <div class="product-card">
+                                <img src="@producto.ProImagenUrl" class="product-image" alt="@producto.ProNombre">
+                                <div class="product-info">
+                                    <h5 class="product-title">@producto.ProNombre</h5>
+                                    <p class="product-price">$@producto.ProPrecio.ToString("N2")</p>
+                                    <a href="@Url.Action("DetalleProducto", "Home", new { id = producto.ProductoId })" class="btn btn-outline-light">Ver Detalle</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-warning text-center">
+                    <i class="bi bi-exclamation-triangle me-2"></i>No se encontraron productos que coincidan con los filtros aplicados.
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Style {
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .sidebar {
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            overflow-y: auto;
+        }
+
+        .product-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+            .product-card:hover {
+                transform: translateY(-5px);
+            }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-info {
+            transform: translateY(0);
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .product-price {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .form-check-label {
+            cursor: pointer;
+        }
+
+        .filter-scroll {
+            padding-right: 10px;
+        }
+
+            .filter-scroll::-webkit-scrollbar {
+                width: 5px;
+            }
+
+            .filter-scroll::-webkit-scrollbar-track {
+                background: #f1f1f1;
+            }
+
+            .filter-scroll::-webkit-scrollbar-thumb {
+                background: #888;
+            }
+
+                .filter-scroll::-webkit-scrollbar-thumb:hover {
+                    background: #555;
+                }
+
+        .form-check {
+            padding-left: 1.8rem;
+        }
+
+        .form-check-input {
+            margin-left: -1.8rem;
+        }
+    </style>
+}

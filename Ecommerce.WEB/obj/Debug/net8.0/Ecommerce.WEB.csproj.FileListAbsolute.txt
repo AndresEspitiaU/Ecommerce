@@ -1,3 +1,12 @@
+C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\obj\Debug\net8.0\Ecommerce.WEB.csproj.AssemblyReference.cache
+C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\obj\Debug\net8.0\Ecommerce.WEB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\obj\Debug\net8.0\Ecommerce.WEB.AssemblyInfoInputs.cache
+C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\obj\Debug\net8.0\Ecommerce.WEB.AssemblyInfo.cs
+C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\obj\Debug\net8.0\Ecommerce.WEB.csproj.CoreCompileInputs.cache
+C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\obj\Debug\net8.0\Ecommerce.WEB.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\obj\Debug\net8.0\Ecommerce.WEB.RazorAssemblyInfo.cache
+C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\obj\Debug\net8.0\Ecommerce.WEB.RazorAssemblyInfo.cs
+C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\obj\Debug\net8.0\Ecommerce.WEB.sourcelink.json
 C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\bin\Debug\net8.0\appsettings.json
 C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\bin\Debug\net8.0\Ecommerce.WEB.staticwebassets.runtime.json
@@ -60,14 +69,6 @@ C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\bin\Debug\net8.0\
 C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\bin\Debug\net8.0\Ecommerce.PRC.pdb
 C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\bin\Debug\net8.0\Ecommerce.UTL.pdb
 C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\bin\Debug\net8.0\Ecommerce.BD.pdb
-C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\obj\Debug\net8.0\Ecommerce.WEB.csproj.AssemblyReference.cache
-C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\obj\Debug\net8.0\Ecommerce.WEB.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\obj\Debug\net8.0\Ecommerce.WEB.AssemblyInfoInputs.cache
-C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\obj\Debug\net8.0\Ecommerce.WEB.AssemblyInfo.cs
-C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\obj\Debug\net8.0\Ecommerce.WEB.csproj.CoreCompileInputs.cache
-C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\obj\Debug\net8.0\Ecommerce.WEB.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\obj\Debug\net8.0\Ecommerce.WEB.RazorAssemblyInfo.cache
-C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\obj\Debug\net8.0\Ecommerce.WEB.RazorAssemblyInfo.cs
 C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.WEB\obj\Debug\net8.0\staticwebassets\msbuild.Ecommerce.WEB.Microsoft.AspNetCore.StaticWebAssets.props

@@ -1,8 +1,21 @@
-﻿@{
+﻿@using Ecommerce.BD.Models
+
+
+@model IEnumerable<Ecommerce.BD.Models.Banner>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!-- Llamada al partial view del carrusel -->
+@await Html.PartialAsync("_BannerCarousel", ViewData["BannersActivos"] as IEnumerable<Banner>)
+
+
+<!-- Colecciones -->
+@* @await Html.PartialAsync("_ColeccionesPartial", ViewData["ColeccionesActivas"] as List<Coleccione>) *@
+
+<!-- Categorías -->
+@await Html.PartialAsync("_CategoriasPartial", ViewData["Categorias"] as List<Categoria>)
+
+<!-- Productos -->
+@await Html.PartialAsync("_Productos", ViewData["Productos"] as IEnumerable<Producto>)

@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Ecommerce.BD.Models.Coleccione>
+
+@if (Model != null && Model.Any())
+{
+    <div class="container my-5">
+        <h2 class="text-center mb-5">Nuestras Colecciones</h2>
+        <div class="row">
+            @foreach (var coleccion in Model)
+            {
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="collection-card position-relative overflow-hidden shadow-sm">
+                        <img src="@coleccion.ColImagenUrl" class="img-fluid" alt="@coleccion.ColNombre" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="collection-overlay d-flex justify-content-center align-items-center">
+                            <h5 class="text-white text-uppercase">@coleccion.ColNombre</h5>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <p class="text-center">No hay colecciones activas en este momento.</p>
+}
+
+@section Styles {
+    <style>
+        /* Contenedor de la tarjeta */
+        .collection-card {
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+            /* Imagen de la tarjeta */
+            .collection-card img {
+                transition: transform 0.3s ease-in-out;
+            }
+
+            /* Efecto zoom en la imagen al pasar el ratón */
+            .collection-card:hover img {
+                transform: scale(1.1);
+            }
+
+        /* Superposición para el título */
+        .collection-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        /* Mostrar la superposición al pasar el ratón */
+        .collection-card:hover .collection-overlay {
+            opacity: 1;
+        }
+
+        /* Estilos del título dentro de la imagen */
+        .collection-overlay h5 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    </style>
+}

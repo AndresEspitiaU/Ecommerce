@@ -18,5 +18,7 @@ namespace Ecommerce.BD.Models
 
         // Relación con productos (si aplicable a categorías principales)
         public virtual ICollection<Producto> Productos { get; set; } = new List<Producto>();
+
+        public int NumeroDeProductos => Productos?.Count ?? 0;
     }
 }

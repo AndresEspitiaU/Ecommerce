@@ -7,6 +7,7 @@ C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.UTL\obj\Debug\net8.0\
 C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.UTL\obj\Debug\net8.0\Ecommerce.UTL.AssemblyInfoInputs.cache
 C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.UTL\obj\Debug\net8.0\Ecommerce.UTL.AssemblyInfo.cs
 C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.UTL\obj\Debug\net8.0\Ecommerce.UTL.csproj.CoreCompileInputs.cache
+C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.UTL\obj\Debug\net8.0\Ecommerce.UTL.sourcelink.json
 C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.UTL\obj\Debug\net8.0\Ecommerce.UTL.dll
 C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.UTL\obj\Debug\net8.0\refint\Ecommerce.UTL.dll
 C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.UTL\obj\Debug\net8.0\Ecommerce.UTL.pdb

@@ -1,0 +1,103 @@
+﻿@model IEnumerable<Ecommerce.BD.Models.Banner>
+@{
+    ViewData["Title"] = "Gestión de Banners";
+    Layout = "_AdminLayout";
+}
+<div class="container-fluid mt-4">
+    <div class="row mb-4">
+        <div class="col">
+            <h1 class="h2 mb-0">Gestión de Banners</h1>
+        </div>
+        <div class="col-auto">
+            <a href="@Url.Action("Crear", "Banners")" class="btn btn-primary">
+                <i class="bi bi-plus-circle me-2"></i>Nuevo Banner
+            </a>
+        </div>
+    </div>
+    <div class="row" id="bannerGrid">
+        @foreach (var banner in Model)
+        {
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="@banner.Imagen" class="card-img-top" alt="@banner.Nombre" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">@banner.Nombre</h5>
+                        <p class="card-text">
+                            <span class="badge @(banner.Activo ? "bg-success" : "bg-danger")">
+                                @(banner.Activo ? "Activo" : "Inactivo")
+                            </span>
+                        </p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <div class="d-flex justify-content-between">
+                            <a href="@Url.Action("Editar", "Banners", new { id = banner.BannerId })" class="btn btn-sm btn-outline-primary" title="Editar">
+                                <i class="bi bi-pencil me-1"></i> Editar
+                            </a>
+                            <button class="btn btn-sm btn-outline-danger" onclick="eliminarBanner('@banner.BannerId')" title="Eliminar">
+                                <i class="bi bi-trash me-1"></i> Eliminar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        #bannerGrid .card:hover {
+            transition: all 0.3s;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+        }
+    </style>
+}
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var $grid = $('#bannerGrid').isotope({
+                itemSelector: '.col-md-6',
+                layoutMode: 'fitRows'
+            });
+        });
+
+        function eliminarBanner(id) {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "Esta acción no se puede deshacer",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: '@Url.Action("Eliminar", "Banners")',
+                        type: 'POST',
+                        data: {
+                            id: id,
+                            __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
+                        },
+                        success: function (data) {
+                            if (data.success) {
+                                Swal.fire('Eliminado', data.message, 'success').then(() => {
+                                    location.reload();
+                                });
+                            } else {
+                                Swal.fire('Error', data.message, 'error');
+                            }
+                        },
+                        error: function () {
+                            Swal.fire('Error', 'No se pudo eliminar el banner', 'error');
+                        }
+                    });
+                }
+            });
+        }
+    </script>
+}

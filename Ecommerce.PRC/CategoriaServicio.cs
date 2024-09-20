@@ -14,6 +14,8 @@ namespace Ecommerce.PRC.Servicios
             _categoriaRepositorio = categoriaRepositorio;
         }
 
+
+
         public async Task<List<Categoria>> ObtenerTodasLasCategoriasAsync()
         {
             return await _categoriaRepositorio.ObtenerTodasLasCategoriasAsync();
