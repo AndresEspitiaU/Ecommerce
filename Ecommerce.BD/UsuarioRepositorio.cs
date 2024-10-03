@@ -1,4 +1,6 @@
+using Ecommerce.BD.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -7,10 +9,19 @@ namespace Ecommerce.BD.Repositorios
     public class UsuarioRepositorio
     {
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly EcommerceContext _contexto;
 
-        public UsuarioRepositorio(UserManager<IdentityUser> userManager)
+        public UsuarioRepositorio(UserManager<IdentityUser> userManager, EcommerceContext contexto)
         {
             _userManager = userManager;
+            _contexto = contexto;
+        }
+
+        // Obtener un usuario personalizado por UsuarioId (de la tabla Usuarios)
+        public async Task<Usuario> ObtenerUsuarioPorUsuarioIdAsync(int usuarioId)
+        {
+            return await _contexto.Usuarios
+                                  .FirstOrDefaultAsync(u => u.UsuarioId == usuarioId);
         }
 
         // Crear un nuevo usuario

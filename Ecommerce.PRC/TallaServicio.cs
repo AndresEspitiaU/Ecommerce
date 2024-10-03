@@ -1,5 +1,6 @@
 ﻿using Ecommerce.BD.Models;
 using Ecommerce.BD.Repositorios;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -12,6 +13,27 @@ namespace Ecommerce.PRC.Servicios
         public TallaServicio(TallaRepositorio tallaRepositorio)
         {
             _tallaRepositorio = tallaRepositorio;
+        }
+
+        // Obtener tallas con nombres y categorías para mostrar en el selector
+        public async Task<List<SelectListItem>> ObtenerTallasConProductosAsync()
+        {
+            return await _tallaRepositorio.ObtenerTallasConProductosAsync();
+        }
+
+        // Obtener tallas combinadas con sus categorías
+        public async Task<List<SelectListItem>> ObtenerTallasConCategoriasAsync()
+        {
+            var tallas = await _tallaRepositorio.ObtenerTallasConCategoriasAsync();
+
+            // Combina el nombre de la talla con la categoría en un SelectListItem
+            var tallasConCategorias = tallas.Select(t => new SelectListItem
+            {
+                Value = t.TallaId.ToString(),
+                Text = $"{t.TalNombre} - {t.TalCategoria}" // Combina el nombre y la categoría
+            }).ToList();
+
+            return tallasConCategorias;
         }
 
         // Obtener todas las tallas

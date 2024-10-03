@@ -68,4 +68,7 @@ public partial class Producto
     public virtual ICollection<PromocionProducto> PromocionProductos { get; set; } = new List<PromocionProducto>();
 
     public virtual ICollection<Reseña> Reseñas { get; set; } = new List<Reseña>();
+
+    public virtual ICollection<ProductoColor> ProductoColores { get; set; } = new List<ProductoColor>();
+
 }

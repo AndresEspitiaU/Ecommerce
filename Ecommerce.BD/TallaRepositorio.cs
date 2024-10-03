@@ -4,6 +4,7 @@ using Microsoft.Data.SqlClient;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Ecommerce.BD.Repositorios
 {
@@ -14,6 +15,28 @@ namespace Ecommerce.BD.Repositorios
         public TallaRepositorio(EcommerceContext contexto)
         {
             _contexto = contexto;
+        }
+
+        // Obtener las tallas con categorías o productos asociados para mostrar en el dropdown
+        public async Task<List<SelectListItem>> ObtenerTallasConProductosAsync()
+        {
+            var tallas = await _contexto.Tallas
+                .Select(t => new SelectListItem
+                {
+                    Value = t.TallaId.ToString(),
+                    Text = t.TalNombre + " - " + t.TalCategoria // Combina el nombre de la talla con la categoría
+                })
+                .ToListAsync();
+
+            return tallas;
+        }
+
+        // Obtener todas las tallas con sus categorías
+        public async Task<List<Talla>> ObtenerTallasConCategoriasAsync()
+        {
+            return await _contexto.Tallas
+                .Where(t => !string.IsNullOrEmpty(t.TalCategoria)) // Opcional: Solo tallas con categorías
+                .ToListAsync();
         }
 
         // Obtener todas las tallas
@@ -83,5 +106,7 @@ namespace Ecommerce.BD.Repositorios
             var parametro = new SqlParameter("@TallaId", id);
             return await _contexto.Database.ExecuteSqlRawAsync("EXEC Talla_delete @TallaId", parametro);
         }
+
+
     }
 }

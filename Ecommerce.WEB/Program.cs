@@ -64,6 +64,12 @@ builder.Services.AddScoped<BannerRepositorio>();
 builder.Services.AddScoped<BannerServicio>();
 builder.Services.AddScoped<ProductoPorGeneroRepositorio>();
 builder.Services.AddScoped<ProductoPorGeneroServicio>();
+builder.Services.AddScoped<ProductoTallaRepositorio>();
+builder.Services.AddScoped<ProductoTallaServicio>();
+builder.Services.AddScoped<ProductoColorRepositorio>();
+builder.Services.AddScoped<ProductoColorServicio>();
+builder.Services.AddScoped<LogRepositorio>();
+builder.Services.AddScoped<LogServicio>();
 
 
 

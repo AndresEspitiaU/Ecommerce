@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Ecommerce.WEB.Models;
 using System.Diagnostics;
 using Ecommerce.BD.Repositorios;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Ecommerce.WEB.Controllers
 {
@@ -61,11 +62,18 @@ namespace Ecommerce.WEB.Controllers
             var producto = await _productoServicio.ObtenerProductoPorIdAsync(id);
             if (producto == null)
             {
-                return NotFound(); 
+                return NotFound();
             }
+
+            // Obtener las tallas asociadas al producto
+            var tallas = await _productoServicio.ObtenerTallasPorProductoIdAsync(id);
+
+            // Pasar el producto y las tallas a la vista
+            ViewData["TallasDisponibles"] = new SelectList(tallas, "TallaId", "TalNombre");
 
             return View(producto);
         }
+
 
         public async Task<IActionResult> CargarProductosPorCategoria(int categoriaId)
         {

@@ -24,14 +24,14 @@ namespace Ecommerce.WEB.Controllers
         public IActionResult Crear()
         {
             // Asegúrate de que estás pasando un modelo inicializado a la vista
-            var nuevoColor = new Colore();
+            var nuevoColor = new Color();
             return View(nuevoColor);  // Inicializa el modelo
         }
 
 
 
         [HttpPost]
-        public async Task<IActionResult> Crear(Colore colore)
+        public async Task<IActionResult> Crear(Color colore)
         {
             if (ModelState.IsValid)
             {
@@ -52,7 +52,7 @@ namespace Ecommerce.WEB.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Editar(int id, Colore colore)
+        public async Task<IActionResult> Editar(int id, Color colore)
         {
             if (id != colore.ColorId)
             {

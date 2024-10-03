@@ -49,13 +49,13 @@ namespace Ecommerce.BD.Repositorios
         }
 
         // Listar todos los colores
-        public async Task<List<Colore>> ObtenerTodosLosColoresAsync()
+        public async Task<List<Color>> ObtenerTodosLosColoresAsync()
         {
             return await _contexto.Colores.FromSqlRaw("EXEC Color_list").ToListAsync();
         }
 
         // Obtener un color por ID
-        public async Task<Colore> ObtenerColorPorIdAsync(int id)
+        public async Task<Color> ObtenerColorPorIdAsync(int id)
         {
             var parametro = new SqlParameter("@ColorId", id);
 

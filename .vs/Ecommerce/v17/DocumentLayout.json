@@ -3,76 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.web\\views\\home\\shop.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|solutionrelative:ecommerce.web\\views\\home\\shop.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{8F2AA7B4-151E-4056-8C72-3B1768E864FC}|Ecommerce.BD\\Ecommerce.BD.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.bd\\usuariorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F2AA7B4-151E-4056-8C72-3B1768E864FC}|Ecommerce.BD\\Ecommerce.BD.csproj|solutionrelative:ecommerce.bd\\usuariorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|solutionrelative:ecommerce.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4B09EF98-A321-4E24-8C04-7DCDFD28C694}|Ecommerce.PRC\\Ecommerce.PRC.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.prc\\logservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B09EF98-A321-4E24-8C04-7DCDFD28C694}|Ecommerce.PRC\\Ecommerce.PRC.csproj|solutionrelative:ecommerce.prc\\logservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4B09EF98-A321-4E24-8C04-7DCDFD28C694}|Ecommerce.PRC\\Ecommerce.PRC.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.prc\\productoservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B09EF98-A321-4E24-8C04-7DCDFD28C694}|Ecommerce.PRC\\Ecommerce.PRC.csproj|solutionrelative:ecommerce.prc\\productoservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F2AA7B4-151E-4056-8C72-3B1768E864FC}|Ecommerce.BD\\Ecommerce.BD.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.bd\\productorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8F2AA7B4-151E-4056-8C72-3B1768E864FC}|Ecommerce.BD\\Ecommerce.BD.csproj|solutionrelative:ecommerce.bd\\productorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|solutionrelative:ecommerce.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.web\\views\\productoporgenero\\genero.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|solutionrelative:ecommerce.web\\views\\productoporgenero\\genero.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B09EF98-A321-4E24-8C04-7DCDFD28C694}|Ecommerce.PRC\\Ecommerce.PRC.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.prc\\marcaservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B09EF98-A321-4E24-8C04-7DCDFD28C694}|Ecommerce.PRC\\Ecommerce.PRC.csproj|solutionrelative:ecommerce.prc\\marcaservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F2AA7B4-151E-4056-8C72-3B1768E864FC}|Ecommerce.BD\\Ecommerce.BD.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.bd\\marcarepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8F2AA7B4-151E-4056-8C72-3B1768E864FC}|Ecommerce.BD\\Ecommerce.BD.csproj|solutionrelative:ecommerce.bd\\marcarepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.web\\views\\productos\\productosporcategoria.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|solutionrelative:ecommerce.web\\views\\productos\\productosporcategoria.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.web\\views\\shared\\_productos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|solutionrelative:ecommerce.web\\views\\shared\\_productos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.web\\views\\home\\detalleproducto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|solutionrelative:ecommerce.web\\views\\home\\detalleproducto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F2AA7B4-151E-4056-8C72-3B1768E864FC}|Ecommerce.BD\\Ecommerce.BD.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.bd\\productoimagenrepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8F2AA7B4-151E-4056-8C72-3B1768E864FC}|Ecommerce.BD\\Ecommerce.BD.csproj|solutionrelative:ecommerce.bd\\productoimagenrepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F2AA7B4-151E-4056-8C72-3B1768E864FC}|Ecommerce.BD\\Ecommerce.BD.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.bd\\productoporgenerorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8F2AA7B4-151E-4056-8C72-3B1768E864FC}|Ecommerce.BD\\Ecommerce.BD.csproj|solutionrelative:ecommerce.bd\\productoporgenerorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8F2AA7B4-151E-4056-8C72-3B1768E864FC}|Ecommerce.BD\\Ecommerce.BD.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.bd\\logrepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F2AA7B4-151E-4056-8C72-3B1768E864FC}|Ecommerce.BD\\Ecommerce.BD.csproj|solutionrelative:ecommerce.bd\\logrepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\CONSULTAS.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CONSULTAS.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.web\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|solutionrelative:ecommerce.web\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8F2AA7B4-151E-4056-8C72-3B1768E864FC}|Ecommerce.BD\\Ecommerce.BD.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.bd\\models\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F2AA7B4-151E-4056-8C72-3B1768E864FC}|Ecommerce.BD\\Ecommerce.BD.csproj|solutionrelative:ecommerce.bd\\models\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4B09EF98-A321-4E24-8C04-7DCDFD28C694}|Ecommerce.PRC\\Ecommerce.PRC.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.prc\\productoporgeneroservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B09EF98-A321-4E24-8C04-7DCDFD28C694}|Ecommerce.PRC\\Ecommerce.PRC.csproj|solutionrelative:ecommerce.prc\\productoporgeneroservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8F2AA7B4-151E-4056-8C72-3B1768E864FC}|Ecommerce.BD\\Ecommerce.BD.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.bd\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F2AA7B4-151E-4056-8C72-3B1768E864FC}|Ecommerce.BD\\Ecommerce.BD.csproj|solutionrelative:ecommerce.bd\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.web\\controllers\\productoporgenerocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|solutionrelative:ecommerce.web\\controllers\\productoporgenerocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.web\\views\\log\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|solutionrelative:ecommerce.web\\views\\log\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.web\\views\\productoporgenero\\mujeres.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|solutionrelative:ecommerce.web\\views\\productoporgenero\\mujeres.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.web\\views\\shared\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|solutionrelative:ecommerce.web\\views\\shared\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.web\\controllers\\productocolorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|solutionrelative:ecommerce.web\\controllers\\productocolorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|solutionrelative:ecommerce.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|solutionrelative:ecommerce.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|c:\\users\\57315\\documents\\andresespitia\\ecommerce\\ecommerce.web\\controllers\\logcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EE9912E-8089-4DA2-8DD4-3B3D9D4D4E06}|Ecommerce.WEB\\Ecommerce.WEB.csproj|solutionrelative:ecommerce.web\\controllers\\logcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\CONSULTAS.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
@@ -86,7 +62,7 @@
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 256,
+      "VerticalTabListWidth": 224,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
@@ -99,149 +75,136 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Shop.cshtml",
-              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Views\\Home\\Shop.cshtml",
-              "RelativeDocumentMoniker": "Ecommerce.WEB\\Views\\Home\\Shop.cshtml",
-              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Views\\Home\\Shop.cshtml",
-              "RelativeToolTip": "Ecommerce.WEB\\Views\\Home\\Shop.cshtml",
-              "ViewState": "AgIAADQAAAAAAAAAAAAIwEgAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-20T21:33:38.799Z",
+              "Title": "UsuarioRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.BD\\UsuarioRepositorio.cs",
+              "RelativeDocumentMoniker": "Ecommerce.BD\\UsuarioRepositorio.cs",
+              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.BD\\UsuarioRepositorio.cs",
+              "RelativeToolTip": "Ecommerce.BD\\UsuarioRepositorio.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAoAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T18:09:53.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.BD\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "Ecommerce.BD\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.BD\\Models\\Usuario.cs",
+              "RelativeToolTip": "Ecommerce.BD\\Models\\Usuario.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAiwCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T17:59:16.63Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "MarcaServicio.cs",
-              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.PRC\\MarcaServicio.cs",
-              "RelativeDocumentMoniker": "Ecommerce.PRC\\MarcaServicio.cs",
-              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.PRC\\MarcaServicio.cs",
-              "RelativeToolTip": "Ecommerce.PRC\\MarcaServicio.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAmwCoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T21:20:28.005Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MarcaRepositorio.cs",
-              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.BD\\MarcaRepositorio.cs",
-              "RelativeDocumentMoniker": "Ecommerce.BD\\MarcaRepositorio.cs",
-              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.BD\\MarcaRepositorio.cs",
-              "RelativeToolTip": "Ecommerce.BD\\MarcaRepositorio.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAkwEIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T21:19:52.404Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ProductosPorCategoria.cshtml",
-              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Views\\Productos\\ProductosPorCategoria.cshtml",
-              "RelativeDocumentMoniker": "Ecommerce.WEB\\Views\\Productos\\ProductosPorCategoria.cshtml",
-              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Views\\Productos\\ProductosPorCategoria.cshtml",
-              "RelativeToolTip": "Ecommerce.WEB\\Views\\Productos\\ProductosPorCategoria.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAASAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Views\\Log\\Index.cshtml",
+              "RelativeDocumentMoniker": "Ecommerce.WEB\\Views\\Log\\Index.cshtml",
+              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Views\\Log\\Index.cshtml",
+              "RelativeToolTip": "Ecommerce.WEB\\Views\\Log\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-20T21:02:37.631Z",
+              "WhenOpened": "2024-10-01T17:54:51.529Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "ProductoImagenRepositorio.cs",
-              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.BD\\ProductoImagenRepositorio.cs",
-              "RelativeDocumentMoniker": "Ecommerce.BD\\ProductoImagenRepositorio.cs",
-              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.BD\\ProductoImagenRepositorio.cs",
-              "RelativeToolTip": "Ecommerce.BD\\ProductoImagenRepositorio.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Title": "LogController.cs",
+              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Controllers\\LogController.cs",
+              "RelativeDocumentMoniker": "Ecommerce.WEB\\Controllers\\LogController.cs",
+              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Controllers\\LogController.cs",
+              "RelativeToolTip": "Ecommerce.WEB\\Controllers\\LogController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T20:14:02.967Z",
+              "WhenOpened": "2024-10-01T17:54:37.524Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductoServicio.cs",
-              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.PRC\\ProductoServicio.cs",
-              "RelativeDocumentMoniker": "Ecommerce.PRC\\ProductoServicio.cs",
-              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.PRC\\ProductoServicio.cs",
-              "RelativeToolTip": "Ecommerce.PRC\\ProductoServicio.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAowDEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "ProductoColorController.cs",
+              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Controllers\\ProductoColorController.cs",
+              "RelativeDocumentMoniker": "Ecommerce.WEB\\Controllers\\ProductoColorController.cs",
+              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Controllers\\ProductoColorController.cs",
+              "RelativeToolTip": "Ecommerce.WEB\\Controllers\\ProductoColorController.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAYwEYAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T19:57:16.544Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProductoRepositorio.cs",
-              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.BD\\ProductoRepositorio.cs",
-              "RelativeDocumentMoniker": "Ecommerce.BD\\ProductoRepositorio.cs",
-              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.BD\\ProductoRepositorio.cs",
-              "RelativeToolTip": "Ecommerce.BD\\ProductoRepositorio.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAUwHQAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T19:52:22.553Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ProductosController.cs",
-              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Controllers\\ProductosController.cs",
-              "RelativeDocumentMoniker": "Ecommerce.WEB\\Controllers\\ProductosController.cs",
-              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Controllers\\ProductosController.cs",
-              "RelativeToolTip": "Ecommerce.WEB\\Controllers\\ProductosController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwC8AAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T19:48:57.104Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "_Productos.cshtml",
-              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Views\\Shared\\_Productos.cshtml",
-              "RelativeDocumentMoniker": "Ecommerce.WEB\\Views\\Shared\\_Productos.cshtml",
-              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Views\\Shared\\_Productos.cshtml",
-              "RelativeToolTip": "Ecommerce.WEB\\Views\\Shared\\_Productos.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAgwBUAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-20T19:26:45.76Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DetalleProducto.cshtml",
-              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Views\\Home\\DetalleProducto.cshtml",
-              "RelativeDocumentMoniker": "Ecommerce.WEB\\Views\\Home\\DetalleProducto.cshtml",
-              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Views\\Home\\DetalleProducto.cshtml",
-              "RelativeToolTip": "Ecommerce.WEB\\Views\\Home\\DetalleProducto.cshtml",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAAAGwAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-20T19:25:31.632Z",
+              "WhenOpened": "2024-10-01T17:53:16.906Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Ecommerce.WEB\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Ecommerce.WEB\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFkAAABAAAAAAAAAAA==",
+              "Title": "LogServicio.cs",
+              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.PRC\\LogServicio.cs",
+              "RelativeDocumentMoniker": "Ecommerce.PRC\\LogServicio.cs",
+              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.PRC\\LogServicio.cs",
+              "RelativeToolTip": "Ecommerce.PRC\\LogServicio.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABgAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T19:23:15.897Z",
+              "WhenOpened": "2024-10-01T17:52:57.78Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 2,
+              "Title": "LogRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.BD\\LogRepositorio.cs",
+              "RelativeDocumentMoniker": "Ecommerce.BD\\LogRepositorio.cs",
+              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.BD\\LogRepositorio.cs",
+              "RelativeToolTip": "Ecommerce.BD\\LogRepositorio.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAzwCgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T17:52:17.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Log.cs",
+              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.BD\\Models\\Log.cs",
+              "RelativeDocumentMoniker": "Ecommerce.BD\\Models\\Log.cs",
+              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.BD\\Models\\Log.cs",
+              "RelativeToolTip": "Ecommerce.BD\\Models\\Log.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T17:50:14.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Program.cs",
+              "RelativeDocumentMoniker": "Ecommerce.WEB\\Program.cs",
+              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Program.cs",
+              "RelativeToolTip": "Ecommerce.WEB\\Program.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAEcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T21:09:16.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_Sidebar.cshtml",
+              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Views\\Shared\\_Sidebar.cshtml",
+              "RelativeDocumentMoniker": "Ecommerce.WEB\\Views\\Shared\\_Sidebar.cshtml",
+              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Views\\Shared\\_Sidebar.cshtml",
+              "RelativeToolTip": "Ecommerce.WEB\\Views\\Shared\\_Sidebar.cshtml",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAGIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-21T20:06:08.53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "CONSULTAS.sql ",
               "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\CONSULTAS.sql",
               "RelativeDocumentMoniker": "CONSULTAS.sql",
@@ -252,79 +215,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Genero.cshtml",
-              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Views\\ProductoPorGenero\\Genero.cshtml",
-              "RelativeDocumentMoniker": "Ecommerce.WEB\\Views\\ProductoPorGenero\\Genero.cshtml",
-              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Views\\ProductoPorGenero\\Genero.cshtml",
-              "RelativeToolTip": "Ecommerce.WEB\\Views\\ProductoPorGenero\\Genero.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-20T16:16:05.344Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Ecommerce.WEB\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Ecommerce.WEB\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAAAEsAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAADgv0sAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-09-20T15:48:18.778Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Mujeres.cshtml",
-              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Views\\ProductoPorGenero\\Mujeres.cshtml",
-              "RelativeDocumentMoniker": "Ecommerce.WEB\\Views\\ProductoPorGenero\\Mujeres.cshtml",
-              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Views\\ProductoPorGenero\\Mujeres.cshtml",
-              "RelativeToolTip": "Ecommerce.WEB\\Views\\ProductoPorGenero\\Mujeres.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-20T15:47:32.238Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ProductoPorGeneroController.cs",
-              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Controllers\\ProductoPorGeneroController.cs",
-              "RelativeDocumentMoniker": "Ecommerce.WEB\\Controllers\\ProductoPorGeneroController.cs",
-              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.WEB\\Controllers\\ProductoPorGeneroController.cs",
-              "RelativeToolTip": "Ecommerce.WEB\\Controllers\\ProductoPorGeneroController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAUwCAAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T15:47:04.641Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ProductoPorGeneroServicio.cs",
-              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.PRC\\ProductoPorGeneroServicio.cs",
-              "RelativeDocumentMoniker": "Ecommerce.PRC\\ProductoPorGeneroServicio.cs",
-              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.PRC\\ProductoPorGeneroServicio.cs",
-              "RelativeToolTip": "Ecommerce.PRC\\ProductoPorGeneroServicio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T15:46:30.056Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ProductoPorGeneroRepositorio.cs",
-              "DocumentMoniker": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.BD\\ProductoPorGeneroRepositorio.cs",
-              "RelativeDocumentMoniker": "Ecommerce.BD\\ProductoPorGeneroRepositorio.cs",
-              "ToolTip": "C:\\Users\\57315\\Documents\\AndresEspitia\\Ecommerce\\Ecommerce.BD\\ProductoPorGeneroRepositorio.cs",
-              "RelativeToolTip": "Ecommerce.BD\\ProductoPorGeneroRepositorio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBUAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T15:45:49.087Z",
               "EditorCaption": ""
             }
           ]

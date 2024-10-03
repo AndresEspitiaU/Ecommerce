@@ -42,12 +42,12 @@ namespace Ecommerce.PRC.Servicios
             return await _coloreRepositorio.EliminarColorAsync(id);
         }
 
-        public async Task<List<Colore>> ObtenerTodosLosColoresAsync()
+        public async Task<List<Color>> ObtenerTodosLosColoresAsync()
         {
             return await _coloreRepositorio.ObtenerTodosLosColoresAsync();
         }
 
-        public async Task<Colore> ObtenerColorPorIdAsync(int id)
+        public async Task<Color> ObtenerColorPorIdAsync(int id)
         {
             return await _coloreRepositorio.ObtenerColorPorIdAsync(id);
         }

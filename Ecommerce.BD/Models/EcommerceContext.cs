@@ -17,6 +17,7 @@ public partial class EcommerceContext : IdentityDbContext<IdentityUser>
     {
     }
 
+
     public virtual DbSet<Banner> Banners { get; set; }
     public virtual DbSet<Carrito> Carritos { get; set; }
 
@@ -28,7 +29,7 @@ public partial class EcommerceContext : IdentityDbContext<IdentityUser>
 
     public virtual DbSet<Coleccione> Colecciones { get; set; }
 
-    public virtual DbSet<Colore> Colores { get; set; }
+    public virtual DbSet<Color> Colores { get; set; }
 
     public virtual DbSet<Cupone> Cupones { get; set; }
 
@@ -64,6 +65,8 @@ public partial class EcommerceContext : IdentityDbContext<IdentityUser>
 
     public virtual DbSet<ProductoTalla> ProductoTallas { get; set; }
 
+    public virtual DbSet<ProductoColor> ProductoColores { get; set; }
+
     public virtual DbSet<PromocionProducto> PromocionProductos { get; set; }
 
     public virtual DbSet<Promocione> Promociones { get; set; }
@@ -83,6 +86,39 @@ public partial class EcommerceContext : IdentityDbContext<IdentityUser>
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<ProductoColor>()
+            .HasOne(pc => pc.Producto)
+            .WithMany(p => p.ProductoColores)
+            .HasForeignKey(pc => pc.ProductoId);
+
+        modelBuilder.Entity<ProductoColor>()
+            .HasOne(pc => pc.Colores)
+            .WithMany(c => c.ProductoColores)
+            .HasForeignKey(pc => pc.ColorId);
+
+        modelBuilder.Entity<Color>()
+            .ToTable("Colores");
+
+            modelBuilder.Entity<ProductoColor>()
+        .ToTable("ProductoColor");
+
+             modelBuilder.Entity<Color>(entity =>
+            {
+                entity.ToTable("Colores");
+                entity.HasKey(e => e.ColorId);
+                // ... otras configuraciones de la entidad Color ...
+            });
+
+            modelBuilder.Entity<ProductoColor>()
+                .HasKey(pc => new { pc.ProductoId, pc.ColorId });
+
+            modelBuilder.Entity<ProductoColor>()
+                .HasOne(pc => pc.Producto)
+                .WithMany(p => p.ProductoColores)
+                .HasForeignKey(pc => pc.ProductoId);
+
+          
 
         modelBuilder.Entity<Carrito>(entity =>
         {
@@ -147,7 +183,7 @@ public partial class EcommerceContext : IdentityDbContext<IdentityUser>
                 .HasColumnName("Col_Nombre");
         });
 
-        modelBuilder.Entity<Colore>(entity =>
+        modelBuilder.Entity<Color>(entity =>
         {
             entity.HasKey(e => e.ColorId).HasName("PK__Colores__8DA7674DC6AC5C29");
 
@@ -550,12 +586,12 @@ public partial class EcommerceContext : IdentityDbContext<IdentityUser>
 
             entity.HasOne(d => d.Producto).WithMany(p => p.ProductoTallas)
                 .HasForeignKey(d => d.ProductoId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK__ProductoT__Produ__59C55456");
 
             entity.HasOne(d => d.Talla).WithMany(p => p.ProductoTallas)
                 .HasForeignKey(d => d.TallaId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK__ProductoT__Talla__5AB9788F");
         });
 

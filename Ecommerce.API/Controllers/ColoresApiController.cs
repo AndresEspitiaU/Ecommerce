@@ -19,7 +19,7 @@ namespace Ecommerce.API.Controllers
 
         // GET: api/ColoresApi
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Colore>>> GetColores()
+        public async Task<ActionResult<IEnumerable<Color>>> GetColores()
         {
             var colores = await _coloreServicio.ObtenerTodosLosColoresAsync();
             return Ok(colores);
@@ -27,7 +27,7 @@ namespace Ecommerce.API.Controllers
 
         // GET: api/ColoresApi/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Colore>> GetColore(int id)
+        public async Task<ActionResult<Color>> GetColore(int id)
         {
             var colore = await _coloreServicio.ObtenerColorPorIdAsync(id);
 
@@ -42,7 +42,7 @@ namespace Ecommerce.API.Controllers
 
         // POST: api/ColoresApi
         [HttpPost]
-        public async Task<ActionResult> PostColore([FromBody] Colore colore)
+        public async Task<ActionResult> PostColore([FromBody] Color colore)
         {
             if (!ModelState.IsValid)
             {
@@ -55,7 +55,7 @@ namespace Ecommerce.API.Controllers
 
         // PUT: api/ColoresApi/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutColore(int id, [FromBody] Colore colore)
+        public async Task<IActionResult> PutColore(int id, [FromBody] Color colore)
         {
             if (id != colore.ColorId)
             {

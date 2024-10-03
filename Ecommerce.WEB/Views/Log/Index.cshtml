@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Ecommerce.BD.Models.Log>
+
+@{
+    ViewData["Title"] = "Registro de Actividades";
+    Layout = "_AdminLayout";
+}
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">Registro de Actividades</h2>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Usuario</th>
+                <th scope="col">Acción</th>
+                <th scope="col">Nivel</th>
+                <th scope="col">Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var log in Model)
+            {
+                <tr>
+                    <td>
+                        @if (log.Usuario != null)
+                        {
+                            @log.Usuario.UsuNombre @log.Usuario.UsuApellido
+                        }
+                        else
+                        {
+                            <span class="text-danger">Usuario Desconocido</span>
+                        }
+                    </td>
+                    <td>@log.LogsAccion</td>
+                    <td>@log.LogsNivel</td>
+                    <td>@log.LogsFecha?.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Styles {
+    <style>
+        .table {
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+
+        .table th, .table td {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .table th {
+            background-color: #343a40;
+            color: white;
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .text-danger {
+            color: #dc3545;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #333;
+        }
+    </style>
+}

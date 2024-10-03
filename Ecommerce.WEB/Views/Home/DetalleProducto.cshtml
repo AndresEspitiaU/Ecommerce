@@ -1,4 +1,5 @@
 ﻿@model Ecommerce.BD.Models.Producto
+
 <div class="container-fluid">
     <div class="row">
         <!-- Carrusel de Imágenes del Producto -->
@@ -6,9 +7,13 @@
             <div id="productImageCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#productImageCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    @for (var i = 1; i <= Model.ProductoImagenes.Count(); i++)
+                    @{
+                        var index = 1; // Inicia el índice en 1 ya que la imagen principal tiene el índice 0
+                    }
+                    @foreach (var imagen in Model.ProductoImagenes)
                     {
-                        <button type="button" data-bs-target="#productImageCarousel" data-bs-slide-to="@i" aria-label="Slide @i"></button>
+                        <button type="button" data-bs-target="#productImageCarousel" data-bs-slide-to="@index" aria-label="Slide @(index + 1)"></button>
+                        index++;
                     }
                 </div>
 
@@ -19,11 +24,15 @@
                     </div>
 
                     <!-- Otras imágenes asociadas al producto -->
+                    @{
+                        index = 1; // Reinicia el índice para las imágenes del carrusel
+                    }
                     @foreach (var imagen in Model.ProductoImagenes)
                     {
                         <div class="carousel-item">
                             <img src="@imagen.ImagenUrl" class="d-block w-100" alt="@Model.ProNombre" style="height: 100vh; object-fit: contain;">
                         </div>
+                        index++;
                     }
                 </div>
 
@@ -37,7 +46,21 @@
                     <span class="visually-hidden">Siguiente</span>
                 </button>
             </div>
+
+            <!-- Thumbnails debajo del slider -->
+            <div class="carousel-thumbnails mt-3 d-flex justify-content-center">
+                <img src="@Model.ProImagenUrl" class="img-thumbnail mx-1" alt="@Model.ProNombre" data-bs-target="#productImageCarousel" data-bs-slide-to="0" style="height: 100px; object-fit: contain;">
+                @{
+                    index = 1; // Reutiliza el índice para las miniaturas
+                }
+                @foreach (var imagen in Model.ProductoImagenes)
+                {
+                    <img src="@imagen.ImagenUrl" class="img-thumbnail mx-1" alt="@Model.ProNombre" data-bs-target="#productImageCarousel" data-bs-slide-to="@index" style="height: 100px; object-fit: contain;">
+                    index++;
+                }
+            </div>
         </div>
+
 
         <!-- Detalles del Producto -->
         <div class="col-lg-5 product-details">
@@ -59,8 +82,26 @@
                 @if (Model.ProStock > 0)
                 {
                     <p class="text-muted mb-4">Stock: @Model.ProStock unidades</p>
+
+                    <!-- Formulario para agregar al carrito -->
                     <form method="post" asp-action="AgregarAlCarrito" asp-controller="Carrito" class="mb-5">
                         <input type="hidden" name="ProductoId" value="@Model.ProductoId" />
+                        <input type="hidden" id="selectedTallaId" name="TallaId" value="" />
+
+                        <!-- Selector de Tallas -->
+                        <div class="mb-3">
+                            <label class="form-label">Talla</label>
+                            <div class="talla-selector">
+                                @foreach (var talla in ViewData["TallasDisponibles"] as SelectList)
+                                {
+                                    <div class="talla-option" data-talla-id="@talla.Value">
+                                        @talla.Text
+                                    </div>
+                                }
+                            </div>
+                        </div>
+
+                        <!-- Cantidad -->
                         <div class="d-flex align-items-center mb-3">
                             <input type="number" name="Cantidad" value="1" min="1" max="@Model.ProStock" class="form-control me-3" style="width: 80px;">
                             <button type="submit" class="btn btn-primary btn-lg flex-grow-1 add-to-cart-btn">
@@ -107,23 +148,7 @@
 @section Style {
     <style>
         body {
-            background-color: #424242; /*FONDO DEL SLIDER*/
-        }
-
-        .product-image-container {
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0.4));
+            background-color: #f8f9fa;
         }
 
         .product-details {
@@ -182,5 +207,63 @@
                 transform: translateY(-2px);
                 box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             }
+
+        .talla-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .talla-option {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+            .talla-option:hover {
+                background-color: #f8f9fa;
+            }
+
+            .talla-option.selected {
+                background-color: #007bff;
+                color: white;
+                border-color: #007bff;
+            }
     </style>
+}
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var carousel = document.getElementById('productImageCarousel');
+
+            // Verificar si el carrusel existe
+            if (carousel) {
+                // Agregar un listener para verificar si hay problemas con el carrusel
+                carousel.addEventListener('slide.bs.carousel', function (e) {
+                    // Verificar que el elemento activo y el siguiente existan antes de aplicar clases
+                    var activeElement = e.relatedTarget;
+                    if (activeElement && activeElement.classList) {
+                        console.log('Slide change successful.');
+                    } else {
+                        console.warn('No se pudo encontrar el elemento relacionado para aplicar la clase activa.');
+                    }
+                });
+            }
+
+            // Funcionalidad de las miniaturas
+            var thumbnails = document.querySelectorAll('.carousel-thumbnails img');
+            thumbnails.forEach(function (thumbnail) {
+                thumbnail.addEventListener('click', function () {
+                    var slideIndex = this.getAttribute('data-bs-slide-to');
+                    if (carousel && slideIndex !== null) {
+                        var bsCarousel = bootstrap.Carousel.getInstance(carousel);
+                        bsCarousel.to(slideIndex);
+                    }
+                });
+            });
+        });
+    </script>
 }

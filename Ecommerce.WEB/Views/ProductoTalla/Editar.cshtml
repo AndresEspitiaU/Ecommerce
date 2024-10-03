@@ -1,0 +1,129 @@
+﻿@model Ecommerce.BD.Models.ProductoTalla
+@{
+    ViewData["Title"] = "Editar Relación Producto Talla";
+    Layout = "_AdminLayout";
+}
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary ">
+                    <h2 class="mb-0 text-white">Editar Relación Producto Talla</h2>
+                </div>
+                <div class="card-body">
+                    <form id="editForm" asp-action="Editar" method="post">
+                        <input type="hidden" asp-for="ProductoTallaId" />
+
+                        <div class="mb-3">
+                            <label asp-for="ProductoId" class="form-label">Producto</label>
+                            <select asp-for="ProductoId" class="form-select" asp-items="ViewBag.Productos" required>
+                                <option value="">Seleccione un producto</option>
+                            </select>
+                            <div class="invalid-feedback">Por favor, seleccione un producto.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="TallaId" class="form-label">Talla</label>
+                            <select asp-for="TallaId" class="form-select" asp-items="ViewBag.Tallas" required>
+                                <option value="">Seleccione una talla</option>
+                            </select>
+                            <div class="invalid-feedback">Por favor, seleccione una talla.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="CantidadStock" class="form-label">Cantidad en Stock</label>
+                            <input asp-for="CantidadStock" class="form-control" type="number" min="0" required />
+                            <div class="invalid-feedback">Por favor, ingrese una cantidad válida.</div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary" id="btn-actualizar">
+                                <i class="fas fa-save me-2"></i>Actualizar
+                            </button>
+                            <a href="@Url.Action("Index", "ProductoTalla")" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left me-2"></i>Volver
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#editForm").validate({
+                rules: {
+                    ProductoId: "required",
+                    TallaId: "required",
+                    CantidadStock: {
+                        required: true,
+                        number: true,
+                        min: 0
+                    }
+                },
+                messages: {
+                    ProductoId: "Por favor, seleccione un producto.",
+                    TallaId: "Por favor, seleccione una talla.",
+                    CantidadStock: {
+                        required: "Por favor, ingrese la cantidad en stock.",
+                        number: "Por favor, ingrese un número válido.",
+                        min: "La cantidad debe ser mayor o igual a cero."
+                    }
+                },
+                errorElement: "div",
+                errorClass: "invalid-feedback",
+                highlight: function (element, errorClass, validClass) {
+                    $(element).addClass("is-invalid").removeClass("is-valid");
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).addClass("is-valid").removeClass("is-invalid");
+                },
+                submitHandler: function (form) {
+                    var formData = new FormData(form);
+                    $.ajax({
+                        url: form.action,
+                        type: "POST",
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function (data) {
+                            if (data.success) {
+                                Swal.fire({
+                                    title: '¡Éxito!',
+                                    text: data.message,
+                                    icon: 'success',
+                                    confirmButtonText: 'OK'
+                                }).then(() => {
+                                    window.location.href = '/ProductoTalla/Index';
+                                });
+                            } else {
+                                Swal.fire({
+                                    title: 'Error',
+                                    text: data.message,
+                                    icon: 'error',
+                                    confirmButtonText: 'OK'
+                                });
+                            }
+                        },
+                        error: function () {
+                            Swal.fire({
+                                title: 'Error',
+                                text: 'Ocurrió un error en la comunicación con el servidor.',
+                                icon: 'error',
+                                confirmButtonText: 'OK'
+                            });
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}

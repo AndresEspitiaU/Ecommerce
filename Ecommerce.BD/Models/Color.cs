@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Ecommerce.BD.Models;
 
-public partial class Colore
+public partial class Color
 {
     public int ColorId { get; set; }
 
@@ -15,5 +15,7 @@ public partial class Colore
     [Required(ErrorMessage = "El código hexadecimal es obligatorio.")]
     [RegularExpression("^#([A-Fa-f0-9]{6})$", ErrorMessage = "El código hexadecimal no es válido.")]
     public string Col_Hexadecimal { get; set; }
+
+    public virtual ICollection<ProductoColor> ProductoColores { get; set; } = new List<ProductoColor>();
 
 }

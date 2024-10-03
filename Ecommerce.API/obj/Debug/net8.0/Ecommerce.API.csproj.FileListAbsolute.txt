@@ -83,3 +83,11 @@ C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.API\bin\Debug\net8.0\
 C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.API\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.API\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
 C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.API\obj\Debug\net8.0\Ecommerce.API.sourcelink.json
+C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.API\bin\Debug\net8.0\System.Web.Razor.dll
+C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.API\bin\Debug\net8.0\System.Web.Helpers.dll
+C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.API\bin\Debug\net8.0\System.Web.WebPages.Deployment.dll
+C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.API\bin\Debug\net8.0\System.Web.WebPages.Razor.dll
+C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.API\bin\Debug\net8.0\System.Web.WebPages.dll
+C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.API\bin\Debug\net8.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.API\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\57315\Documents\AndresEspitia\Ecommerce\Ecommerce.API\bin\Debug\net8.0\Microsoft.Web.Infrastructure.dll

@@ -188,5 +188,16 @@ namespace Ecommerce.BD.Repositorios
             var parametro = new SqlParameter("@ProductoId", id);
             return await _contexto.Database.ExecuteSqlRawAsync("EXEC Producto_delete @ProductoId", parametro);
         }
+
+        // Obtener las tallas asociadas a un producto
+        public async Task<List<Talla>> ObtenerTallasPorProductoIdAsync(int productoId)
+        {
+            return await _contexto.ProductoTallas
+                .Where(pt => pt.ProductoId == productoId)
+                .Include(pt => pt.Talla)
+                .Select(pt => pt.Talla)
+                .ToListAsync();
+        }
+
     }
 }

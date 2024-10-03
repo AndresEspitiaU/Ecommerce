@@ -1,0 +1,139 @@
+﻿@model IEnumerable<Ecommerce.BD.Models.ProductoTalla>
+@{
+    ViewData["Title"] = "Lista de Producto Tallas";
+    Layout = "_AdminLayout";
+    int itemsPerPage = 12;
+    int totalPages = (int)Math.Ceiling((double)Model.Count() / itemsPerPage);
+}
+
+<div class="container-fluid py-4">
+    <h2 class="text-primary mb-4">Lista de Producto Tallas</h2>
+
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <a asp-action="Crear" class="btn btn-success">
+                <i class="fas fa-plus-circle me-2"></i>Agregar Producto Talla
+            </a>
+        </div>
+        <div class="col-md-6">
+            <input type="text" id="searchInput" class="form-control" placeholder="Buscar...">
+        </div>
+    </div>
+
+    <div id="productoTallaCards" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+        @foreach (var item in Model)
+        {
+            <div class="col producto-talla-item">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Producto.ProNombre</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Talla: @item.Talla.TalNombre</h6>
+                        <p class="card-text">
+                            Cantidad en Stock:
+                            <span class="badge bg-@(item.CantidadStock > 10 ? "success" : (item.CantidadStock > 5 ? "warning" : "danger"))">
+                                @item.CantidadStock
+                            </span>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="Editar" asp-route-id="@item.ProductoTallaId" class="btn btn-outline-primary btn-sm">
+                                <i class="fas fa-edit me-1"></i>Editar
+                            </a>
+                            <button class="btn btn-outline-danger btn-sm" onclick="eliminarProductoTalla(@item.ProductoTallaId)">
+                                <i class="fas fa-trash-alt me-1"></i>Eliminar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <nav aria-label="Page navigation" class="mt-4">
+        <ul class="pagination justify-content-center" id="pagination">
+            @for (int i = 1; i <= totalPages; i++)
+            {
+                <li class="page-item @(i == 1 ? "active" : "")">
+                    <a class="page-link" href="#" data-page="@i">@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            const itemsPerPage = @itemsPerPage;
+            const $items = $('.producto-talla-item');
+            const $pagination = $('#pagination');
+
+            function showPage(pageNumber) {
+                const start = (pageNumber - 1) * itemsPerPage;
+                const end = start + itemsPerPage;
+
+                $items.hide().slice(start, end).show();
+                $pagination.find('li').removeClass('active');
+                $pagination.find(`li a[data-page="${pageNumber}"]`).parent().addClass('active');
+            }
+
+            $pagination.on('click', 'a', function (e) {
+                e.preventDefault();
+                showPage($(this).data('page'));
+            });
+
+            $('#searchInput').on('keyup', function () {
+                const searchTerm = $(this).val().toLowerCase();
+                $items.each(function () {
+                    const text = $(this).text().toLowerCase();
+                    $(this).toggle(text.indexOf(searchTerm) > -1);
+                });
+
+                // Reset pagination after search
+                showPage(1);
+            });
+
+            // Show first page initially
+            showPage(1);
+        });
+
+        function eliminarProductoTalla(id) {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "Esta acción no se puede deshacer",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: '@Url.Action("Eliminar", "ProductoTalla")',
+                        type: 'POST',
+                        data: { id: id },
+                        success: function (data) {
+                            if (data.success) {
+                                Swal.fire({
+                                    title: 'Eliminado',
+                                    text: data.message,
+                                    icon: 'success'
+                                }).then(() => {
+                                    location.reload();
+                                });
+                            } else {
+                                Swal.fire('Error', data.message, 'error');
+                            }
+                        },
+                        error: function () {
+                            Swal.fire('Error', 'No se pudo eliminar el Producto Talla', 'error');
+                        }
+                    });
+                }
+            });
+        }
+    </script>
+}

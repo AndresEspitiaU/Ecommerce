@@ -165,7 +165,7 @@ namespace Ecommerce.BD.Migrations
                     b.ToTable("Colecciones");
                 });
 
-            modelBuilder.Entity("Ecommerce.BD.Models.Colore", b =>
+            modelBuilder.Entity("Ecommerce.BD.Models.Color", b =>
                 {
                     b.Property<int>("ColorId")
                         .ValueGeneratedOnAdd()
@@ -188,7 +188,7 @@ namespace Ecommerce.BD.Migrations
                     b.HasKey("ColorId")
                         .HasName("PK__Colores__8DA7674DC6AC5C29");
 
-                    b.ToTable("Colores");
+                    b.ToTable("Colores", (string)null);
                 });
 
             modelBuilder.Entity("Ecommerce.BD.Models.Cupone", b =>
@@ -771,6 +771,29 @@ namespace Ecommerce.BD.Migrations
                         .IsUnique();
 
                     b.ToTable("Productos");
+                });
+
+            modelBuilder.Entity("Ecommerce.BD.Models.ProductoColor", b =>
+                {
+                    b.Property<int>("ProductoColorId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductoColorId"));
+
+                    b.Property<int>("ColorId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductoId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ProductoColorId");
+
+                    b.HasIndex("ColorId");
+
+                    b.HasIndex("ProductoId");
+
+                    b.ToTable("ProductoColor");
                 });
 
             modelBuilder.Entity("Ecommerce.BD.Models.ProductoDescuento", b =>
@@ -1547,6 +1570,25 @@ namespace Ecommerce.BD.Migrations
                     b.Navigation("Subcategoria");
                 });
 
+            modelBuilder.Entity("Ecommerce.BD.Models.ProductoColor", b =>
+                {
+                    b.HasOne("Ecommerce.BD.Models.Color", "Colores")
+                        .WithMany("ProductoColores")
+                        .HasForeignKey("ColorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Ecommerce.BD.Models.Producto", "Producto")
+                        .WithMany("ProductoColores")
+                        .HasForeignKey("ProductoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Colores");
+
+                    b.Navigation("Producto");
+                });
+
             modelBuilder.Entity("Ecommerce.BD.Models.ProductoDescuento", b =>
                 {
                     b.HasOne("Ecommerce.BD.Models.Descuento", "Descuento")
@@ -1582,12 +1624,14 @@ namespace Ecommerce.BD.Migrations
                     b.HasOne("Ecommerce.BD.Models.Producto", "Producto")
                         .WithMany("ProductoTallas")
                         .HasForeignKey("ProductoId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("FK__ProductoT__Produ__59C55456");
 
                     b.HasOne("Ecommerce.BD.Models.Talla", "Talla")
                         .WithMany("ProductoTallas")
                         .HasForeignKey("TallaId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("FK__ProductoT__Talla__5AB9788F");
 
@@ -1741,6 +1785,11 @@ namespace Ecommerce.BD.Migrations
                     b.Navigation("Productos");
                 });
 
+            modelBuilder.Entity("Ecommerce.BD.Models.Color", b =>
+                {
+                    b.Navigation("ProductoColores");
+                });
+
             modelBuilder.Entity("Ecommerce.BD.Models.Descuento", b =>
                 {
                     b.Navigation("ProductoDescuentos");
@@ -1786,6 +1835,8 @@ namespace Ecommerce.BD.Migrations
                     b.Navigation("ListaDeseoItems");
 
                     b.Navigation("PedidoItems");
+
+                    b.Navigation("ProductoColores");
 
                     b.Navigation("ProductoDescuentos");
 
