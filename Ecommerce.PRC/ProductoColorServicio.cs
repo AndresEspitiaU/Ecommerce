@@ -8,10 +8,11 @@ namespace Ecommerce.PRC.Servicios
     public class ProductoColorServicio
     {
         private readonly ProductoColorRepositorio _productoColorRepositorio;
-
-        public ProductoColorServicio(ProductoColorRepositorio productoColorRepositorio)
+        private readonly LogServicio _logServicio;
+        public ProductoColorServicio(ProductoColorRepositorio productoColorRepositorio, LogServicio logServicio)
         {
             _productoColorRepositorio = productoColorRepositorio;
+            _logServicio = logServicio;
         }
 
         // Insertar un nuevo color para un producto
@@ -23,6 +24,17 @@ namespace Ecommerce.PRC.Servicios
             await _productoColorRepositorio.InsertarProductoColorAsync(productoId, colorId);
         }
 
+        // Método para crear un nuevo producto color
+        public async Task CrearProductoColorAsync(ProductoColor productoColor, int? usuarioId)
+        {
+            // Crear el producto color
+            await _productoColorRepositorio.CrearProductoColorAsync(productoColor);
+
+            // Registrar un log de creación
+            string accion = $"ProductoColor creado: {productoColor.ColorId}";
+            string nivel = "Información"; // Puedes ajustar el nivel según la necesidad
+            await _logServicio.CrearLogAsync(accion, usuarioId, nivel);
+        }
 
         public async Task<List<Producto>> ObtenerTodosLosProductosConColoresAsync()
             {

@@ -1,3 +1,4 @@
+using Ecommerce.BD.Models;
 using Ecommerce.BD.Repositorios;
 using Microsoft.AspNetCore.Identity;
 
@@ -11,6 +12,20 @@ namespace Ecommerce.PRC.Servicios
         {
             _usuarioRepositorio = usuarioRepositorio;
         }
+
+        // Método para obtener el UsuarioId a partir del IdentityUserId
+        public async Task<int?> ObtenerUsuarioIdPorIdentityIdAsync(string identityUserId)
+        {
+            return await _usuarioRepositorio.ObtenerUsuarioIdPorIdentityIdAsync(identityUserId);
+        }
+
+        // Método para obtener un usuario por su IdentityUserId
+        public async Task<Usuario> ObtenerUsuarioPorIdentityIdAsync(string identityUserId)
+        {
+            return await _usuarioRepositorio.ObtenerUsuarioPorIdentityIdAsync(identityUserId);
+        }
+
+       
 
         // Crear un nuevo usuario
         public async Task<IdentityResult> CrearUsuarioAsync(string email, string password)

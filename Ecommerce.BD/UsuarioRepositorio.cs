@@ -17,11 +17,33 @@ namespace Ecommerce.BD.Repositorios
             _contexto = contexto;
         }
 
+
+
+
+        // Método para obtener el UsuarioId por el IdentityUserId
+        public async Task<int?> ObtenerUsuarioIdPorIdentityIdAsync(string identityUserId)
+        {
+            var usuario = await _contexto.Usuarios.FirstOrDefaultAsync(u => u.IdentityUserId == identityUserId);
+            return usuario?.UsuarioId; // Devuelve el UsuarioId, o null si no se encuentra
+        }
+
+        // Buscar usuario por IdentityUserId
+        public async Task<IdentityUser> ObtenerUsuarioPorIdentityUserIdAsync(string identityUserId)
+        {
+            return await _userManager.FindByIdAsync(identityUserId);
+        }
+
         // Obtener un usuario personalizado por UsuarioId (de la tabla Usuarios)
         public async Task<Usuario> ObtenerUsuarioPorUsuarioIdAsync(int usuarioId)
         {
             return await _contexto.Usuarios
                                   .FirstOrDefaultAsync(u => u.UsuarioId == usuarioId);
+        }
+
+        // Obtener un usuario por ID (de AspNetUsers)
+        public async Task<IdentityUser> ObtenerUsuarioPorIdAsync(string userId)
+        {
+            return await _userManager.FindByIdAsync(userId);  // Asegúrate de que este ID proviene de AspNetUsers
         }
 
         // Crear un nuevo usuario
@@ -36,11 +58,14 @@ namespace Ecommerce.BD.Repositorios
             return await _userManager.CreateAsync(usuario, password);
         }
 
-        // Obtener un usuario por ID
-        public async Task<IdentityUser> ObtenerUsuarioPorIdAsync(string userId)
+        public async Task<Usuario> ObtenerUsuarioPorIdentityIdAsync(string identityUserId)
         {
-            return await _userManager.FindByIdAsync(userId);
+            return await _contexto.Usuarios
+                                  .Include(u => u.IdentityUser) // Asegúrate de incluir la relación con IdentityUser
+                                  .FirstOrDefaultAsync(u => u.IdentityUserId == identityUserId);
         }
+
+
 
         // Obtener un usuario por email
         public async Task<IdentityUser> ObtenerUsuarioPorEmailAsync(string email)

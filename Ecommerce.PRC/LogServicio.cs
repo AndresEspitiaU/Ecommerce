@@ -1,43 +1,15 @@
 ﻿using Ecommerce.BD.Models;
 using Ecommerce.BD.Repositorios;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Ecommerce.PRC.Servicios
 {
     public class LogServicio
     {
         private readonly LogRepositorio _logRepositorio;
-        private readonly UsuarioRepositorio _usuarioRepositorio; // Agregamos el repositorio de usuarios
 
-        public LogServicio(LogRepositorio logRepositorio, UsuarioRepositorio usuarioRepositorio)
+        public LogServicio(LogRepositorio logRepositorio)
         {
             _logRepositorio = logRepositorio;
-            _usuarioRepositorio = usuarioRepositorio;
-        }
-
-        // Registrar un nuevo log con validación de usuario
-        public async Task RegistrarLogAsync(int? usuarioId, string accion, string nivel)
-        {
-            if (usuarioId.HasValue)
-            {
-                var usuario = await _usuarioRepositorio.ObtenerUsuarioPorUsuarioIdAsync(usuarioId.Value);
-                if (usuario == null)
-                {
-                    throw new Exception("El UsuarioId no existe en la base de datos.");
-                }
-            }
-
-            var log = new Log
-            {
-                UsuarioId = usuarioId,  // Puede ser nulo si el log no está asociado a ningún usuario
-                LogsAccion = accion,
-                LogsNivel = nivel,
-                LogsFecha = DateTime.Now
-            };
-
-            await _logRepositorio.InsertarLogAsync(log);
         }
 
         // Obtener todos los logs
@@ -46,10 +18,51 @@ namespace Ecommerce.PRC.Servicios
             return await _logRepositorio.ObtenerTodosLosLogsAsync();
         }
 
-        // Obtener log por Id
-        public async Task<Log> ObtenerLogPorIdAsync(int id)
+        // Crear un nuevo log
+        public async Task CrearLogAsync(string accion, int? usuarioId, string nivel)
         {
-            return await _logRepositorio.ObtenerLogPorIdAsync(id);
+            var log = new Log
+            {
+                LogsAccion = accion,
+                UsuarioId = usuarioId,
+                LogsFecha = DateTime.Now,
+                LogsNivel = nivel
+            };
+
+            await _logRepositorio.CrearLogAsync(log);
+        }
+
+        // Método para registrar un log
+        public async Task RegistrarLogAsync(int? usuarioId, string logsAccion, string logsNivel)
+        {
+            var log = new Log
+            {
+                UsuarioId = usuarioId,
+                LogsAccion = logsAccion,
+                LogsFecha = DateTime.UtcNow,
+                LogsNivel = logsNivel
+            };
+
+            await _logRepositorio.InsertarLogAsync(log);
+        }
+
+
+        // Eliminar un log por ID
+        public async Task EliminarLogAsync(int logId)
+        {
+            await _logRepositorio.EliminarLogAsync(logId);
+        }
+
+        // Obtener un log por ID
+        public async Task<Log> ObtenerLogPorIdAsync(int logId)
+        {
+            return await _logRepositorio.ObtenerLogPorIdAsync(logId);
+        }
+
+        // Obtener logs por usuario
+        public async Task<List<Log>> ObtenerLogsPorUsuarioIdAsync(int usuarioId)
+        {
+            return await _logRepositorio.ObtenerLogsPorUsuarioIdAsync(usuarioId);
         }
     }
 }

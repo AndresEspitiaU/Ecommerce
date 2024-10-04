@@ -14,6 +14,8 @@ SELECT * FROM ProductoTallas
 
 
 SELECT * FROM AspNetUsers
+SELECT * FROM Usuarios
+SELECT * FROM Logs
 
 
 EXEC ProductoColor_Delete @ProductoId = 11, @ColorId = 8

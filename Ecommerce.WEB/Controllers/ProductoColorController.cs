@@ -1,9 +1,11 @@
 ﻿using Ecommerce.BD.Models;
 using Ecommerce.PRC.Servicios;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace Ecommerce.WEB.Controllers
@@ -14,13 +16,15 @@ namespace Ecommerce.WEB.Controllers
         private readonly ProductoServicio _productoServicio;
         private readonly ColoreServicio _coloreServicio;
         private readonly LogServicio _logServicio;
+        private readonly UsuarioServicio _usuarioServicio;
 
-        public ProductoColorController(ProductoColorServicio productoColorServicio, ProductoServicio productoServicio, ColoreServicio coloreServicio, LogServicio logServicio)
+        public ProductoColorController(ProductoColorServicio productoColorServicio, ProductoServicio productoServicio, ColoreServicio coloreServicio, LogServicio logServicio, UsuarioServicio usuarioServicio)
         {
             _productoColorServicio = productoColorServicio;
             _productoServicio = productoServicio;
             _coloreServicio = coloreServicio;
             _logServicio = logServicio;
+            _usuarioServicio = usuarioServicio;
         }
 
         // Método Index: Lista todos los productos con sus colores asociados
@@ -50,20 +54,22 @@ namespace Ecommerce.WEB.Controllers
             if (productoId <= 0 || colorId <= 0)
             {
                 ModelState.AddModelError(string.Empty, "El producto y el color son obligatorios.");
-                var productos = await _productoServicio.ObtenerTodosLosProductosAsync();
-                var colores = await _coloreServicio.ObtenerTodosLosColoresAsync();
-                ViewData["Productos"] = new SelectList(productos, "ProductoId", "ProNombre");
-                ViewData["Colores"] = new SelectList(colores, "ColorId", "Col_Nombre");
                 return View();
             }
 
             try
             {
+                // Obtener el IdentityUserId del usuario autenticado
+                var identityUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+                // Obtener el UsuarioId
+                var usuarioId = await _usuarioServicio.ObtenerUsuarioIdPorIdentityIdAsync(identityUserId);
+
                 // Crear la relación Producto-Color
                 await _productoColorServicio.InsertarProductoColorAsync(productoId, colorId);
 
                 // Registrar log de creación
-                await _logServicio.RegistrarLogAsync(1, $"Color {colorId} asociado al producto {productoId}", "INFO");
+                await _logServicio.RegistrarLogAsync(usuarioId, $"Color {colorId} asociado al producto {productoId}", "INFO");
 
                 TempData["SuccessMessage"] = "Color asociado al producto con éxito";
                 return RedirectToAction("Index");
@@ -71,16 +77,18 @@ namespace Ecommerce.WEB.Controllers
             catch (Exception ex)
             {
                 // Registrar log de error
-                await _logServicio.RegistrarLogAsync(1, $"Error al asociar color {colorId} al producto {productoId}: {ex.Message}", "ERROR");
+                var identityUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var usuarioId = await _usuarioServicio.ObtenerUsuarioIdPorIdentityIdAsync(identityUserId);
+
+                await _logServicio.RegistrarLogAsync(usuarioId, $"Error al asociar color {colorId} al producto {productoId}: {ex.Message}", "ERROR");
 
                 ModelState.AddModelError(string.Empty, "Ocurrió un error al asociar el color al producto.");
-                var productos = await _productoServicio.ObtenerTodosLosProductosAsync();
-                var colores = await _coloreServicio.ObtenerTodosLosColoresAsync();
-                ViewData["Productos"] = new SelectList(productos, "ProductoId", "ProNombre");
-                ViewData["Colores"] = new SelectList(colores, "ColorId", "Col_Nombre");
                 return View();
             }
         }
+
+
+
 
         // Editar los colores de un producto (GET)
         public async Task<IActionResult> Editar(int productoId)

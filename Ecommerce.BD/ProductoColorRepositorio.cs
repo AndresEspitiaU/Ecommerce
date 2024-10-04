@@ -15,7 +15,12 @@ namespace Ecommerce.BD.Repositorios
             _contexto = contexto;
         }
 
-
+        // Crear un nuevo producto color
+        public async Task CrearProductoColorAsync(ProductoColor productoColor)
+        {
+            _contexto.ProductoColores.Add(productoColor);
+            await _contexto.SaveChangesAsync();
+        }
         public async Task<List<Producto>> ObtenerTodosLosProductosConColoresAsync()
         {
             try
